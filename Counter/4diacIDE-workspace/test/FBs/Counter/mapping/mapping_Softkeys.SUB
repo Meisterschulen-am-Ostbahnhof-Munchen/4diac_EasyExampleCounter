@@ -15,11 +15,11 @@
 			<Parameter Name="QI" Value="TRUE" Comment=""/>
 			<Parameter Name="u8SAMember" Value="255" Comment=""/>
 			<Parameter Name="u16ObjId_1" Value="SoftKey_PlusPlus" Comment=""/>
-			<Parameter Name="DigitalInput_1" Value="'Counter.PlusPlus.SoftKey_PlusPlus'" Comment=""/>
+			<Parameter Name="DigitalInput_1" Value="'Counter.PlusPlus.SoftKey'" Comment=""/>
 			<Parameter Name="u16ObjId_2" Value="SoftKey_Reset_Gesamtzaehler" Comment=""/>
-			<Parameter Name="DigitalInput_2" Value="'Counter.Reset_Gesamtzaehler.SoftKey_Reset_Gesamtzaehler'" Comment=""/>
+			<Parameter Name="DigitalInput_2" Value="'Counter.Reset_Gesamtzaehler.SoftKey'" Comment=""/>
 			<Parameter Name="u16ObjId_3" Value="SoftKey_Reset_Tageszaehler" Comment=""/>
-			<Parameter Name="DigitalInput_3" Value="'Counter.Reset_Tageszaehler.SoftKey_Reset_Tageszaehler'" Comment=""/>
+			<Parameter Name="DigitalInput_3" Value="'Counter.Reset_Tageszaehler.SoftKey'" Comment=""/>
 			<Parameter Name="u16ObjId_4" Value="SoftKey_MinusMinus" Comment=""/>
 			<Parameter Name="DigitalInput_4" Value="'Counter.MinusMinus.SoftKey_MinusMinus'" Comment=""/>
 		</FB>

@@ -15,9 +15,9 @@
 			<Parameter Name="QI" Value="TRUE" Comment=""/>
 			<Parameter Name="u8SAMember" Value="255" Comment=""/>
 			<Parameter Name="u16ObjId_1" Value="NumberVariable_Gesamtziel" Comment=""/>
-			<Parameter Name="NumericValueInput_1" Value="'Counter.GesamtzaehlerVergleich.IN_NumberVariable_Gesamtziel'" Comment=""/>
+			<Parameter Name="NumericValueInput_1" Value="'Counter.GesamtzaehlerVergleich.IN_NumberVariable'" Comment=""/>
 			<Parameter Name="u16ObjId_2" Value="NumberVariable_Tagesziel" Comment=""/>
-			<Parameter Name="NumericValueInput_2" Value="'Counter.TageszaehlerVergleich.IN_NumberVariable_Tagesziel'" Comment=""/>
+			<Parameter Name="NumericValueInput_2" Value="'Counter.TageszaehlerVergleich.IN_NumberVariable'" Comment=""/>
 		</FB>
 		<EventConnections>
 			<Connection Source="INIT" Destination="UT_SoftkeyMapping_UP.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0">
