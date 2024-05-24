@@ -7,16 +7,12 @@
 	<SubAppInterfaceList>
 		<SubAppEventInputs>
 			<SubAppEvent Name="INIT" Type="Event" Comment="Initialization Request">
-				<Attribute Name="YPOSITION" Type="STRING" Value="20"/>
 			</SubAppEvent>
 			<SubAppEvent Name="CU" Type="Event" Comment="Count Up">
-				<Attribute Name="YPOSITION" Type="STRING" Value="0"/>
 			</SubAppEvent>
 			<SubAppEvent Name="CD" Type="Event" Comment="Count Down">
-				<Attribute Name="YPOSITION" Type="STRING" Value="0"/>
 			</SubAppEvent>
 			<SubAppEvent Name="R" Type="Event" Comment="Reset">
-				<Attribute Name="YPOSITION" Type="STRING" Value="184"/>
 			</SubAppEvent>
 			<SubAppEvent Name="rVT" Type="Event" Comment="refresh VT">
 			</SubAppEvent>

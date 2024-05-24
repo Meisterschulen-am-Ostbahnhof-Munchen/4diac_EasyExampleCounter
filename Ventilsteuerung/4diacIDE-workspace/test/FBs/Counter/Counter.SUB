@@ -11,67 +11,87 @@
 		</SubAppEventInputs>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<SubApp Name="VT_active" Type="VT_active" Comment="" x="233.33333333333334" y="-573.3333333333334">
+		<SubApp Name="VT_active" Type="VT_active" Comment="" x="266.67" y="-400">
 			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
 			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
 		</SubApp>
-		<SubApp Name="mapping" Type="mapping" Comment="" x="0.0" y="-2533.3333333333335">
+		<SubApp Name="mapping" Type="mapping" Comment="" x="0" y="-2533.33">
 			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
 			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
 		</SubApp>
-		<SubApp Name="MinusMinus" Type="Tuple" Comment="" x="0.0" y="-1333.3333333333335">
+		<SubApp Name="MinusMinus" Type="Tuple" Comment="" x="0" y="-1466.67">
 		</SubApp>
-		<SubApp Name="PlusPlus" Type="Tuple" Comment="" x="0.0" y="-1720.0">
+		<SubApp Name="PlusPlus" Type="Tuple" Comment="" x="0" y="-1866.67">
 		</SubApp>
-		<SubApp Name="Reset_Gesamtzaehler" Type="Reset" Comment="" x="0.0" y="-933.3333333333334">
+		<SubApp Name="Reset_Gesamtzaehler" Type="Reset" Comment="" x="0" y="-933.33">
 		</SubApp>
-		<SubApp Name="Reset_Tageszaehler" Type="Reset" Comment="" x="0.0" y="620.0">
+		<SubApp Name="Reset_Tageszaehler" Type="Reset" Comment="" x="0" y="620">
 		</SubApp>
-		<SubApp Name="Gesamtzaehler" Type="Zaehler" Comment="" x="4000.0" y="-2000.0">
+		<SubApp Name="Gesamtzaehler" Type="Zaehler" Comment="" x="4000" y="-2000">
 			<Parameter Name="KEY" Value="KEY_GESAMTZAEHLER" Comment=""/>
 			<Parameter Name="u16ObjId" Value="NumberVariable_Gesamtzaehler" Comment=""/>
 		</SubApp>
-		<SubApp Name="Tageszaehler" Type="Zaehler" Comment="" x="4000.0" y="0.0">
+		<SubApp Name="Tageszaehler" Type="Zaehler" Comment="" x="4000" y="0">
 			<Parameter Name="KEY" Value="KEY_TAGESZAEHLER" Comment=""/>
 			<Parameter Name="u16ObjId" Value="NumberVariable_Tageszaehler" Comment=""/>
 		</SubApp>
-		<SubApp Name="TageszaehlerVergleich" Type="ZaehlerVergleich" Comment="" x="7066.666666666667" y="-266.6666666666667">
+		<SubApp Name="TageszaehlerVergleich" Type="ZaehlerVergleich" Comment="" x="7066.67" y="-266.67">
 			<Parameter Name="KEY" Value="KEY_TAGESZIEL" Comment=""/>
 			<Parameter Name="u16ObjId_Ziel" Value="NumberVariable_Gesamtziel" Comment=""/>
 			<Parameter Name="u16ObjId_Pointer" Value="ObjectPointer_Tagesziel" Comment=""/>
 		</SubApp>
-		<SubApp Name="GesamtzaehlerVergleich" Type="ZaehlerVergleich" Comment="" x="7066.666666666667" y="-2266.666666666667">
+		<SubApp Name="GesamtzaehlerVergleich" Type="ZaehlerVergleich" Comment="" x="7066.67" y="-2266.67">
 			<Parameter Name="KEY" Value="KEY_GESAMTZIEL" Comment=""/>
 			<Parameter Name="u16ObjId_Ziel" Value="NumberVariable_Tagesziel" Comment=""/>
 			<Parameter Name="u16ObjId_Pointer" Value="ObjectPointer_Gesamtziel" Comment=""/>
 		</SubApp>
 		<EventConnections>
-			<Connection Source="INIT" Destination="mapping.INIT" Comment="" dx1="80.0"/>
-			<Connection Source="INIT" Destination="VT_active.INIT" Comment="" dx1="80.0"/>
-			<Connection Source="INIT" Destination="MinusMinus.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0"/>
-			<Connection Source="INIT" Destination="PlusPlus.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0"/>
-			<Connection Source="INIT" Destination="Reset_Gesamtzaehler.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0"/>
-			<Connection Source="INIT" Destination="Reset_Tageszaehler.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0"/>
-			<Connection Source="INIT" Destination="Gesamtzaehler.INIT" Comment="" dx1="2333.3333333333335" dx2="2333.3333333333335" dy="0.0"/>
-			<Connection Source="PlusPlus.IND" Destination="Gesamtzaehler.CU" Comment="" dx1="1406.6666666666667" dx2="1406.6666666666667" dy="0.0"/>
-			<Connection Source="MinusMinus.IND" Destination="Gesamtzaehler.CD" Comment="" dx1="1406.6666666666667" dx2="1406.6666666666667" dy="0.0"/>
-			<Connection Source="Reset_Gesamtzaehler.IND" Destination="Gesamtzaehler.R" Comment="" dx1="1313.3333333333335" dx2="1313.3333333333335" dy="0.0"/>
-			<Connection Source="VT_active.EO" Destination="Gesamtzaehler.rVT" Comment="" dx1="1200.0" dx2="1200.0" dy="0.0"/>
-			<Connection Source="INIT" Destination="Tageszaehler.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0"/>
-			<Connection Source="PlusPlus.IND" Destination="Tageszaehler.CU" Comment="" dx1="1406.6666666666667" dx2="1406.6666666666667" dy="0.0"/>
-			<Connection Source="MinusMinus.IND" Destination="Tageszaehler.CD" Comment="" dx1="1406.6666666666667" dx2="1406.6666666666667" dy="0.0"/>
-			<Connection Source="Reset_Tageszaehler.IND" Destination="Tageszaehler.R" Comment="" dx1="1326.6666666666667" dx2="1326.6666666666667" dy="0.0"/>
-			<Connection Source="VT_active.EO" Destination="Tageszaehler.rVT" Comment="" dx1="1160.0" dx2="1160.0" dy="0.0"/>
-			<Connection Source="INIT" Destination="TageszaehlerVergleich.INIT" Comment="" dx1="4200.0" dx2="4200.0" dy="0.0"/>
-			<Connection Source="Tageszaehler.CNF" Destination="TageszaehlerVergleich.REQ" Comment="" dx1="453.33333333333337" dx2="453.33333333333337" dy="0.0"/>
-			<Connection Source="VT_active.EO" Destination="TageszaehlerVergleich.rVT" Comment="" dx1="4546.666666666667" dx2="4546.666666666667" dy="0.0"/>
-			<Connection Source="INIT" Destination="GesamtzaehlerVergleich.INIT" Comment="" dx1="4200.0" dx2="4200.0" dy="0.0"/>
-			<Connection Source="Gesamtzaehler.CNF" Destination="GesamtzaehlerVergleich.REQ" Comment="" dx1="633.3333333333334" dx2="633.3333333333334" dy="0.0"/>
-			<Connection Source="VT_active.EO" Destination="GesamtzaehlerVergleich.rVT" Comment="" dx1="4560.0" dx2="4560.0" dy="0.0"/>
+			<Connection Source="INIT" Destination="mapping.INIT" Comment="" dx1="80">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="INIT" Destination="VT_active.INIT" Comment="" dx1="80">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="INIT" Destination="MinusMinus.INIT" Comment="" dx1="1700">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="INIT" Destination="PlusPlus.INIT" Comment="" dx1="1700">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="INIT" Destination="Reset_Gesamtzaehler.INIT" Comment="" dx1="73.33" dx2="73.33" dy="0">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="INIT" Destination="Reset_Tageszaehler.INIT" Comment="" dx1="73.33" dx2="73.33" dy="0">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="INIT" Destination="Gesamtzaehler.INIT" Comment="" dx1="2333.33" dx2="2333.33" dy="0">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="PlusPlus.IND" Destination="Gesamtzaehler.CU" Comment="" dx1="1740"/>
+			<Connection Source="MinusMinus.IND" Destination="Gesamtzaehler.CD" Comment="" dx1="1740"/>
+			<Connection Source="Reset_Gesamtzaehler.IND" Destination="Gesamtzaehler.R" Comment="" dx1="1313.33" dx2="1313.33" dy="0"/>
+			<Connection Source="VT_active.EO" Destination="Gesamtzaehler.rVT" Comment="" dx1="1493.33"/>
+			<Connection Source="INIT" Destination="Tageszaehler.INIT" Comment="" dx1="73.33" dx2="73.33" dy="0">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="PlusPlus.IND" Destination="Tageszaehler.CU" Comment="" dx1="1026.67"/>
+			<Connection Source="MinusMinus.IND" Destination="Tageszaehler.CD" Comment="" dx1="1740"/>
+			<Connection Source="Reset_Tageszaehler.IND" Destination="Tageszaehler.R" Comment="" dx1="1326.67" dx2="1326.67" dy="0"/>
+			<Connection Source="VT_active.EO" Destination="Tageszaehler.rVT" Comment="" dx1="1513.33"/>
+			<Connection Source="INIT" Destination="TageszaehlerVergleich.INIT" Comment="" dx1="4200" dx2="4200" dy="0">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="Tageszaehler.CNF" Destination="TageszaehlerVergleich.REQ" Comment="" dx1="453.33" dx2="453.33" dy="0"/>
+			<Connection Source="VT_active.EO" Destination="TageszaehlerVergleich.rVT" Comment="" dx1="4693.33"/>
+			<Connection Source="INIT" Destination="GesamtzaehlerVergleich.INIT" Comment="" dx1="4200" dx2="4200" dy="0">
+				<Attribute Name="Visible" Value="false"/>
+			</Connection>
+			<Connection Source="Gesamtzaehler.CNF" Destination="GesamtzaehlerVergleich.REQ" Comment="" dx1="633.33" dx2="633.33" dy="0"/>
+			<Connection Source="VT_active.EO" Destination="GesamtzaehlerVergleich.rVT" Comment="" dx1="4606.67"/>
 		</EventConnections>
 		<DataConnections>
-			<Connection Source="Tageszaehler.CV" Destination="TageszaehlerVergleich.CV" Comment="" dx1="506.6666666666667" dx2="506.6666666666667" dy="0.0"/>
-			<Connection Source="Gesamtzaehler.CV" Destination="GesamtzaehlerVergleich.CV" Comment="" dx1="480.0" dx2="480.0" dy="0.0"/>
+			<Connection Source="Tageszaehler.CV" Destination="TageszaehlerVergleich.CV" Comment="" dx1="506.67" dx2="506.67" dy="0"/>
+			<Connection Source="Gesamtzaehler.CV" Destination="GesamtzaehlerVergleich.CV" Comment="" dx1="480" dx2="480" dy="0"/>
 		</DataConnections>
 	</SubAppNetwork>
 </SubAppType>
