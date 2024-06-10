@@ -67,7 +67,7 @@
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>8</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -88,7 +88,7 @@
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -124,7 +124,7 @@
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>18</Value>
+					<Value>12</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>24</Value>
@@ -145,7 +145,7 @@
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>12</Value>
+					<Value>8</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>16</Value>
@@ -2648,10 +2648,10 @@
 					<Value>210</Value>
 				</Property>
 				<Property Name="PosValVariableObjectID">
-					<Value>21000</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="TargetValVariableObjectID">
-					<Value>21003</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="MinValVarObjectID">
 					<Value>-1</Value>
@@ -2663,10 +2663,6 @@
 					<Value>0</Value>
 				</Property>
 			</PropertySheet>
-			<Objects>
-				<Object JVS-ID="21000"/>
-				<Object JVS-ID="21003"/>
-			</Objects>
 		</Object>
 		<Object Class="CImage" Name="Image" ObjectName="Icon_Button_MinusMinus" Pinned="FALSE" JVS-ID="20000">
 			<PropertySheet Name="Image">
