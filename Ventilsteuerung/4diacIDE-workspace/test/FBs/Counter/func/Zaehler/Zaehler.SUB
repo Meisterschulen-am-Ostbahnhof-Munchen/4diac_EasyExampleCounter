@@ -38,33 +38,31 @@
 			<Parameter Name="QI" Value="TRUE" Comment=""/>
 		</FB>
 		<EventConnections>
-			<Connection Source="INIT" Destination="Q_NumericValue.INIT" Comment="" dx1="4053.3333333333335"/>
-			<Connection Source="E_CTUD_UDINT.CO" Destination="Q_NumericValue.REQ" Comment="" dx1="80.0"/>
-			<Connection Source="E_CTUD_UDINT.RO" Destination="Q_NumericValue.REQ" Comment="" dx1="80.0"/>
-			<Connection Source="E_CTUD_UDINT.LDO" Destination="Q_NumericValue.REQ" Comment="" dx1="80.0"/>
-			<Connection Source="CU" Destination="E_CTUD_UDINT.CU" Comment="" dx1="886.6666666666667"/>
-			<Connection Source="CD" Destination="E_CTUD_UDINT.CD" Comment="" dx1="780.0"/>
-			<Connection Source="R" Destination="E_CTUD_UDINT.R" Comment="" dx1="793.3333333333334"/>
-			<Connection Source="INIT" Destination="NVS_UDINT.INIT" Comment="" dx1="4053.3333333333335"/>
-			<Connection Source="E_CTUD_UDINT.CO" Destination="NVS_UDINT.SET" Comment="" dx1="406.6666666666667"/>
+			<Connection Source="INIT" Destination="Q_NumericValue.INIT" Comment="" dx1="4050.0"/>
+			<Connection Source="E_CTUD_UDINT.CO" Destination="Q_NumericValue.REQ" Comment="" dx1="75.0"/>
+			<Connection Source="E_CTUD_UDINT.RO" Destination="Q_NumericValue.REQ" Comment="" dx1="75.0"/>
+			<Connection Source="E_CTUD_UDINT.LDO" Destination="Q_NumericValue.REQ" Comment="" dx1="75.0"/>
+			<Connection Source="CU" Destination="E_CTUD_UDINT.CU" Comment="" dx1="883.3333333333334"/>
+			<Connection Source="CD" Destination="E_CTUD_UDINT.CD" Comment="" dx1="775.0"/>
+			<Connection Source="R" Destination="E_CTUD_UDINT.R" Comment="" dx1="791.6666666666667"/>
+			<Connection Source="INIT" Destination="NVS_UDINT.INIT" Comment="" dx1="4050.0"/>
+			<Connection Source="E_CTUD_UDINT.CO" Destination="NVS_UDINT.SET" Comment="" dx1="400.0"/>
 			<Connection Source="E_CTUD_UDINT.RO" Destination="NVS_UDINT.SET" Comment="" dx1="300.0"/>
-			<Connection Source="NVS_UDINT.GETO" Destination="E_CTUD_UDINT.LD" Comment="" dx1="406.6666666666667" dx2="240.0" dy="-560.0"/>
-			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" Comment="" dx1="273.33333333333337" dx2="586.6666666666667" dy="-193.33333333333334"/>
-			<Connection Source="E_CTUD_UDINT.CO" Destination="CNF" Comment="" dx1="2606.666666666667"/>
-			<Connection Source="E_CTUD_UDINT.RO" Destination="CNF" Comment="" dx1="2606.666666666667"/>
-			<Connection Source="E_CTUD_UDINT.LDO" Destination="CNF" Comment="" dx1="2606.666666666667"/>
+			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" Comment="" dx1="266.6666666666667" dx2="583.3333333333334" dy="-191.66666666666669"/>
+			<Connection Source="E_CTUD_UDINT.CO" Destination="CNF" Comment="" dx1="2600.0"/>
+			<Connection Source="E_CTUD_UDINT.RO" Destination="CNF" Comment="" dx1="2600.0"/>
+			<Connection Source="E_CTUD_UDINT.LDO" Destination="CNF" Comment="" dx1="2600.0"/>
 			<Connection Source="rVT" Destination="Q_NumericValue.REQ" Comment="" dx1="3666.666666666667"/>
 			<Connection Source="rVT" Destination="CNF" Comment="" dx1="7600.0"/>
 		</EventConnections>
 		<DataConnections>
-			<Connection Source="E_CTUD_UDINT.CV" Destination="Q_NumericValue.u32NewValue" Comment="" dx1="620.0"/>
-			<Connection Source="E_CTUD_UDINT.CV" Destination="NVS_UDINT.VALUE" Comment="" dx1="193.33333333333334"/>
-			<Connection Source="NVS_UDINT.VALUEO" Destination="E_CTUD_UDINT.PV" Comment="" dx1="640.0" dx2="133.33333333333334" dy="-1086.6666666666667"/>
-			<Connection Source="E_CTUD_UDINT.CV" Destination="CV" Comment="" dx1="173.33333333333334"/>
-			<Connection Source="u16ObjId" Destination="Q_NumericValue.u16ObjId" Comment="" dx1="2840.0">
+			<Connection Source="E_CTUD_UDINT.CV" Destination="Q_NumericValue.u32NewValue" Comment="" dx1="616.6666666666667"/>
+			<Connection Source="E_CTUD_UDINT.CV" Destination="NVS_UDINT.VALUE" Comment="" dx1="191.66666666666669"/>
+			<Connection Source="E_CTUD_UDINT.CV" Destination="CV" Comment="" dx1="166.66666666666669"/>
+			<Connection Source="u16ObjId" Destination="Q_NumericValue.u16ObjId" Comment="" dx1="2833.3333333333335">
 				<Attribute Name="Visible" Type="STRING" Value="false"/>
 			</Connection>
-			<Connection Source="KEY" Destination="NVS_UDINT.KEY" Comment="" dx1="2226.666666666667">
+			<Connection Source="KEY" Destination="NVS_UDINT.KEY" Comment="" dx1="2225.0">
 				<Attribute Name="Visible" Type="STRING" Value="false"/>
 			</Connection>
 		</DataConnections>
