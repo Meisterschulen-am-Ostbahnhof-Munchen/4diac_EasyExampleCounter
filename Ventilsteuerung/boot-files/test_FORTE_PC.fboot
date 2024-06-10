@@ -18,7 +18,7 @@ EMB_RES;<Request ID="18" Action="WRITE"><Connection Source="&apos;Counter.Reset_
 EMB_RES;<Request ID="19" Action="WRITE"><Connection Source="5002" Destination="Counter.mapping.mapping_Softkeys.UT_SoftkeyMapping_UP.u16ObjId_3" /></Request>
 EMB_RES;<Request ID="20" Action="WRITE"><Connection Source="&apos;Counter.Reset_Tageszaehler.SoftKey&apos;" Destination="Counter.mapping.mapping_Softkeys.UT_SoftkeyMapping_UP.DigitalInput_3" /></Request>
 EMB_RES;<Request ID="21" Action="WRITE"><Connection Source="5003" Destination="Counter.mapping.mapping_Softkeys.UT_SoftkeyMapping_UP.u16ObjId_4" /></Request>
-EMB_RES;<Request ID="22" Action="WRITE"><Connection Source="&apos;Counter.MinusMinus.SoftKey_MinusMinus&apos;" Destination="Counter.mapping.mapping_Softkeys.UT_SoftkeyMapping_UP.DigitalInput_4" /></Request>
+EMB_RES;<Request ID="22" Action="WRITE"><Connection Source="&apos;Counter.MinusMinus.SoftKey&apos;" Destination="Counter.mapping.mapping_Softkeys.UT_SoftkeyMapping_UP.DigitalInput_4" /></Request>
 EMB_RES;<Request ID="23" Action="CREATE"><FB Name="Counter.mapping.mapping_Buttons.UT_ButtonMapping_UP" Type="UT_ButtonMapping_UP" /></Request>
 EMB_RES;<Request ID="24" Action="WRITE"><Connection Source="TRUE" Destination="Counter.mapping.mapping_Buttons.UT_ButtonMapping_UP.QI" /></Request>
 EMB_RES;<Request ID="25" Action="WRITE"><Connection Source="255" Destination="Counter.mapping.mapping_Buttons.UT_ButtonMapping_UP.u8SAMember" /></Request>
