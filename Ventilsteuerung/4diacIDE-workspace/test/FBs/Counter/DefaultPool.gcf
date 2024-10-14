@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalConstants Name="DefaultPool" Comment="Global constants">
+    <GlobalConstants>
+        <VarDeclaration Name="ISO_DESIGNATOR_WIDTH" Type="UINT" Comment="" InitialValue="80"/>
+        <VarDeclaration Name="ISO_DESIGNATOR_HEIGHT" Type="UINT" Comment="" InitialValue="80"/>
+        <VarDeclaration Name="ISO_MASK_SIZE" Type="UINT" Comment="" InitialValue="480"/>
+        <VarDeclaration Name="ISO_VERSION_LABEL" Type="STRING" Comment="" InitialValue=""/>
+        <VarDeclaration Name="MASK_WIDTH" Type="UINT" Comment="" InitialValue="480"/>
+        <VarDeclaration Name="MASK_HEIGHT" Type="UINT" Comment="" InitialValue="480"/>
+        <VarDeclaration Name="WorkingSet_0" Type="UINT" Comment="" InitialValue="0"/>
+        <VarDeclaration Name="DataMask_Home" Type="UINT" Comment="" InitialValue="1000"/>
+        <VarDeclaration Name="Container_Gesamtzaehler" Type="UINT" Comment="" InitialValue="3000"/>
+        <VarDeclaration Name="Container_Tageszaehler" Type="UINT" Comment="" InitialValue="3001"/>
+        <VarDeclaration Name="SoftKeyMask_Home" Type="UINT" Comment="" InitialValue="4000"/>
+        <VarDeclaration Name="SoftKey_PlusPlus" Type="UINT" Comment="" InitialValue="5000"/>
+        <VarDeclaration Name="SoftKey_Reset_Gesamtzaehler" Type="UINT" Comment="" InitialValue="5001"/>
+        <VarDeclaration Name="SoftKey_Reset_Tageszaehler" Type="UINT" Comment="" InitialValue="5002"/>
+        <VarDeclaration Name="SoftKey_MinusMinus" Type="UINT" Comment="" InitialValue="5003"/>
+        <VarDeclaration Name="Button_PlusPlus" Type="UINT" Comment="" InitialValue="6000"/>
+        <VarDeclaration Name="Button_Reset_Gesamtzaehler" Type="UINT" Comment="" InitialValue="6001"/>
+        <VarDeclaration Name="Button_Reset_Tageszaehler" Type="UINT" Comment="" InitialValue="6002"/>
+        <VarDeclaration Name="Button_MinusMinus" Type="UINT" Comment="" InitialValue="6003"/>
+        <VarDeclaration Name="InputNumber_Gesamtziel" Type="UINT" Comment="" InitialValue="9000"/>
+        <VarDeclaration Name="InputNumber_Tagesziel" Type="UINT" Comment="" InitialValue="9001"/>
+        <VarDeclaration Name="OutputString_Fasszaehler" Type="UINT" Comment="" InitialValue="11001"/>
+        <VarDeclaration Name="OutputString_Reset_Gesamtzaehler" Type="UINT" Comment="" InitialValue="11002"/>
+        <VarDeclaration Name="OutputString_Gesamtzaehler" Type="UINT" Comment="" InitialValue="11003"/>
+        <VarDeclaration Name="OutputString_Tageszaehler" Type="UINT" Comment="" InitialValue="11004"/>
+        <VarDeclaration Name="OutputString_Reset_Tageszaehler" Type="UINT" Comment="" InitialValue="11005"/>
+        <VarDeclaration Name="OutputString_SoftKey_Reset_Gesamtzaehler" Type="UINT" Comment="" InitialValue="11009"/>
+        <VarDeclaration Name="OutputString_SoftKey_Reset_Tageszaehler" Type="UINT" Comment="" InitialValue="11010"/>
+        <VarDeclaration Name="OutputString_Ziel" Type="UINT" Comment="" InitialValue="11011"/>
+        <VarDeclaration Name="OutputString_ZielErreicht" Type="UINT" Comment="" InitialValue="11012"/>
+        <VarDeclaration Name="OutputNumber_Tageszaehler" Type="UINT" Comment="" InitialValue="12000"/>
+        <VarDeclaration Name="OutputNumber_Gesamtzaehler" Type="UINT" Comment="" InitialValue="12003"/>
+        <VarDeclaration Name="Rectangle_Box" Type="UINT" Comment="" InitialValue="14000"/>
+        <VarDeclaration Name="Meter_Gesamtzaehler" Type="UINT" Comment="" InitialValue="17000"/>
+        <VarDeclaration Name="Meter_Tageszaehler" Type="UINT" Comment="" InitialValue="17001"/>
+        <VarDeclaration Name="LinearBargraph_Gesamtzaehler" Type="UINT" Comment="" InitialValue="18000"/>
+        <VarDeclaration Name="LinearBargraph_Tageszaehler" Type="UINT" Comment="" InitialValue="18001"/>
+        <VarDeclaration Name="Icon_Button_MinusMinus" Type="UINT" Comment="" InitialValue="20000"/>
+        <VarDeclaration Name="Icon_Button_PlusPlus" Type="UINT" Comment="" InitialValue="20001"/>
+        <VarDeclaration Name="Icon_SoftKey_MinusMinus" Type="UINT" Comment="" InitialValue="20002"/>
+        <VarDeclaration Name="IconSoftKey_PlusPlus" Type="UINT" Comment="" InitialValue="20003"/>
+        <VarDeclaration Name="NumberVariable_Tageszaehler" Type="UINT" Comment="" InitialValue="21000"/>
+        <VarDeclaration Name="NumberVariable_Gesamtzaehler" Type="UINT" Comment="" InitialValue="21001"/>
+        <VarDeclaration Name="NumberVariable_Gesamtziel" Type="UINT" Comment="" InitialValue="21002"/>
+        <VarDeclaration Name="NumberVariable_Tagesziel" Type="UINT" Comment="" InitialValue="21003"/>
+        <VarDeclaration Name="FontAttributes_Default" Type="UINT" Comment="" InitialValue="23001"/>
+        <VarDeclaration Name="FontAttributes_Button" Type="UINT" Comment="" InitialValue="23002"/>
+        <VarDeclaration Name="LineAttributes_Border" Type="UINT" Comment="" InitialValue="24000"/>
+        <VarDeclaration Name="FillAttributes_DarkerBG" Type="UINT" Comment="" InitialValue="25000"/>
+        <VarDeclaration Name="ObjectPointer_Null2" Type="UINT" Comment="" InitialValue="27000"/>
+        <VarDeclaration Name="ObjectPointer_Tagesziel" Type="UINT" Comment="" InitialValue="27001"/>
+        <VarDeclaration Name="ObjectPointer_Gesamtziel" Type="UINT" Comment="" InitialValue="27003"/>
+        <VarDeclaration Name="AuxFunction2_PlusPlus" Type="UINT" Comment="" InitialValue="31000"/>
+        <VarDeclaration Name="AuxFunction2_MinusMinus" Type="UINT" Comment="" InitialValue="31001"/>
+    </GlobalConstants>
+</GlobalConstants>

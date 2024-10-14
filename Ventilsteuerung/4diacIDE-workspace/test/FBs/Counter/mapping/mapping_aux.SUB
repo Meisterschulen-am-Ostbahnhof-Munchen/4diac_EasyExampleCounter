@@ -11,7 +11,7 @@
 		</SubAppEventInputs>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<FB Name="UT_AuxiliaryInputMapping" Type="UT_AuxiliaryInputMapping_Type_02_Bool_NonLatched" Comment="" x="-1600.0" y="-1066.6666666666667">
+		<FB Name="UT_AuxiliaryInputMapping" Type="UT_AuxiliaryInputMapping_Type_02_Bool_NonLatched" Comment="" x="-1600" y="-1066.67">
 			<Parameter Name="QI" Value="TRUE" Comment=""/>
 			<Parameter Name="u8SAMember" Value="255" Comment=""/>
 			<Parameter Name="u16ObjId_1" Value="AuxFunction2_PlusPlus" Comment=""/>
@@ -20,8 +20,8 @@
 			<Parameter Name="DigitalInput_2" Value="'Counter.MinusMinus.AuxFunction2'" Comment=""/>
 		</FB>
 		<EventConnections>
-			<Connection Source="INIT" Destination="UT_AuxiliaryInputMapping.INIT" Comment="" dx1="80.0" dx2="80.0" dy="0.0">
-				<Attribute Name="Visible" Type="STRING" Value="false"/>
+			<Connection Source="INIT" Destination="UT_AuxiliaryInputMapping.INIT" Comment="" dx1="80" dx2="80" dy="0">
+				<Attribute Name="Visible" Value="false"/>
 			</Connection>
 		</EventConnections>
 	</SubAppNetwork>

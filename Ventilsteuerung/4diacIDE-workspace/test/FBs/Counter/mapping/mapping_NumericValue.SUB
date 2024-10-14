@@ -11,7 +11,7 @@
 		</SubAppEventInputs>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<FB Name="UT_SoftkeyMapping_UP" Type="UT_NumericValueInputMapping" Comment="" x="1053.3333333333335" y="926.6666666666667">
+		<FB Name="UT_SoftkeyMapping_UP" Type="UT_NumericValueInputMapping" Comment="" x="1053.33" y="926.67">
 			<Parameter Name="QI" Value="TRUE" Comment=""/>
 			<Parameter Name="u8SAMember" Value="255" Comment=""/>
 			<Parameter Name="u16ObjId_1" Value="NumberVariable_Gesamtziel" Comment=""/>
@@ -20,8 +20,8 @@
 			<Parameter Name="NumericValueInput_2" Value="'Counter.TageszaehlerVergleich.IN_NumberVariable'" Comment=""/>
 		</FB>
 		<EventConnections>
-			<Connection Source="INIT" Destination="UT_SoftkeyMapping_UP.INIT" Comment="" dx1="73.33333333333334" dx2="73.33333333333334" dy="0.0">
-				<Attribute Name="Visible" Type="STRING" Value="false"/>
+			<Connection Source="INIT" Destination="UT_SoftkeyMapping_UP.INIT" Comment="" dx1="73.33" dx2="73.33" dy="0">
+				<Attribute Name="Visible" Value="false"/>
 			</Connection>
 		</EventConnections>
 	</SubAppNetwork>

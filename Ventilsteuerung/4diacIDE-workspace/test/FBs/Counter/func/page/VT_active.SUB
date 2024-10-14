@@ -17,18 +17,18 @@
 		</SubAppEventOutputs>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="2266.666666666667" y="133.33333333333334">
+		<FB Name="E_R_TRIG" Type="E_R_TRIG" Comment="" x="2266.67" y="133.33">
 		</FB>
-		<FB Name="CbVtStatus" Type="CbVtStatus" Comment="" x="0.0" y="-133.33333333333334">
+		<FB Name="CbVtStatus" Type="CbVtStatus" Comment="" x="0" y="-133.33">
 		</FB>
 		<EventConnections>
-			<Connection Source="E_R_TRIG.EO" Destination="EO" Comment="" dx1="980.0"/>
-			<Connection Source="CbVtStatus.IND" Destination="E_R_TRIG.EI" Comment="" dx1="1440.0"/>
-			<Connection Source="CbVtStatus.INITO" Destination="INITO" Comment="" dx1="1613.3333333333335"/>
-			<Connection Source="INIT" Destination="CbVtStatus.INIT" Comment="" dx1="666.6666666666667"/>
+			<Connection Source="E_R_TRIG.EO" Destination="EO" Comment="" dx1="980"/>
+			<Connection Source="INIT" Destination="CbVtStatus.INIT" Comment="" dx1="666.67" dx2="666.67" dy="0"/>
+			<Connection Source="CbVtStatus.INITO" Destination="INITO" Comment="" dx1="1613.33" dx2="1613.33" dy="0"/>
+			<Connection Source="CbVtStatus.IND" Destination="E_R_TRIG.EI" Comment="" dx1="1440" dx2="1440" dy="0"/>
 		</EventConnections>
 		<DataConnections>
-			<Connection Source="CbVtStatus.qWsActive" Destination="E_R_TRIG.QI" Comment="" dx1="1440.0"/>
+			<Connection Source="CbVtStatus.qWsActive" Destination="E_R_TRIG.QI" Comment="" dx1="1440" dx2="1440" dy="0"/>
 		</DataConnections>
 	</SubAppNetwork>
 </SubAppType>
