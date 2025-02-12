@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="mapping" Comment="Subapplication Type" >
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="franz" Date="2023-02-19">
+	</VersionInfo>
+	<SubAppInterfaceList>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<SubApp Name="mapping_NumericValue" Type="mapping_NumericValue" x="0" y="0">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<SubApp Name="mapping_Softkeys" Type="mapping_Softkeys" x="0" y="800">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<SubApp Name="mapping_Buttons" Type="mapping_Buttons" x="0" y="400">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<SubApp Name="mapping_aux" Type="mapping_aux" x="0" y="1200">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+	</SubAppNetwork>
+</SubAppType>

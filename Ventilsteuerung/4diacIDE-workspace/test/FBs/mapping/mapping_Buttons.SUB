@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="mapping_Buttons" Comment="Subapplication Type" >
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz" Date="2023-01-29">
+	</VersionInfo>
+	<SubAppInterfaceList>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="UT_ButtonMapping_UP" Type="UT_ButtonMapping_UP" x="900" y="900">
+			<Parameter Name="QI" Value="TRUE"/>
+			<Parameter Name="u8SAMember" Value="255"/>
+			<Parameter Name="u16ObjId_1" Value="DefaultPool::Button_PlusPlus"/>
+			<Parameter Name="DigitalInput_1" Value="'App.Counter.func.PlusPlus.Button'"/>
+			<Parameter Name="u16ObjId_2" Value="DefaultPool::Button_Reset_Gesamtzaehler"/>
+			<Parameter Name="DigitalInput_2" Value="'App.Counter.func.Reset_Gesamtzaehler.Button'"/>
+			<Parameter Name="u16ObjId_3" Value="DefaultPool::Button_Reset_Tageszaehler"/>
+			<Parameter Name="DigitalInput_3" Value="'App.Counter.func.Reset_Tageszaehler.Button'"/>
+			<Parameter Name="u16ObjId_4" Value="DefaultPool::Button_MinusMinus"/>
+			<Parameter Name="DigitalInput_4" Value="'App.Counter.func.MinusMinus.Button'"/>
+		</FB>
+	</SubAppNetwork>
+</SubAppType>
