@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalConstants Name="NVS_Keys" Comment="Global constants" >
+	<Identification Standard="61499-1">
+	</Identification>
+	<VersionInfo Version="1.0" Author="franz" Date="2025-02-12">
+	</VersionInfo>
+	<CompilerInfo>
+	</CompilerInfo>
+	<GlobalConstants>
+		<VarDeclaration Name="KEY_GESAMTZAEHLER" Type="STRING" InitialValue="'Gesamtzaehler'"/>
+		<VarDeclaration Name="KEY_GESAMTZIEL" Type="STRING" InitialValue="'Gesamtziel'"/>
+		<VarDeclaration Name="KEY_TAGESZAEHLER" Type="STRING" InitialValue="'Tageszaehler'"/>
+		<VarDeclaration Name="KEY_TAGESZIEL" Type="STRING" InitialValue="'Tagesziel'"/>
+	</GlobalConstants>
+	<OriginalSource><![CDATA[GLOBALCONSTANTS NVS_Keys
+	// NVS operates on key-value pairs. Keys are ASCII strings; the maximum key length is currently 15
+	// characters.
+	VAR_GLOBAL CONSTANT
+		// '123456789012345'
+		KEY_GESAMTZAEHLER : STRING := 'Gesamtzaehler';
+		KEY_GESAMTZIEL : STRING := 'Gesamtziel';
+		KEY_TAGESZAEHLER : STRING := 'Tageszaehler';
+		KEY_TAGESZIEL : STRING := 'Tagesziel';
+	END_VAR
+END_GLOBALCONSTANTS
+]]></OriginalSource>
+</GlobalConstants>
