@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SubAppType Name="ZaehlerVergleich" Comment="Subapplication Type" >
+<SubAppType Name="ZaehlerVergleich" Comment="Subapplication Type">
 	<Identification Standard="61499-2">
 	</Identification>
 	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-18">
 	</VersionInfo>
 	<SubAppInterfaceList>
 		<SubAppEventInputs>
-			<SubAppEvent Name="REQ" Type="Event" Comment="Normal Execution Request" >
+			<SubAppEvent Name="REQ" Type="Event" Comment="Normal Execution Request">
 			</SubAppEvent>
-			<SubAppEvent Name="rVT" Type="Event" Comment="refresh VT" >
+			<SubAppEvent Name="rVT" Type="Event" Comment="refresh VT">
 			</SubAppEvent>
 		</SubAppEventInputs>
 		<InputVars>
-			<VarDeclaration Name="CV" Type="UDINT" Comment="Counter Value" />
+			<VarDeclaration Name="CV" Type="UDINT" Comment="Counter Value"/>
 			<VarDeclaration Name="KEY" Type="STRING"/>
 			<VarDeclaration Name="u16ObjId_Ziel" Type="UINT"/>
 			<VarDeclaration Name="u16ObjId_Pointer" Type="UINT"/>
@@ -41,8 +41,6 @@
 		<FB Name="F_MOVE" Type="F_MOVE" x="800" y="-200">
 			<Attribute Name="DataType" Value="UDINT"/>
 		</FB>
-		<FB Name="EI_TO_E" Type="EI_TO_E" x="4300" y="600">
-		</FB>
 		<EventConnections>
 			<Connection Source="REQ" Destination="F_GE.REQ" dx1="660"/>
 			<Connection Source="F_GE.CNF" Destination="F_SEL.REQ" dx1="700"/>
@@ -50,11 +48,10 @@
 			<Connection Source="F_SEL.CNF" Destination="Q_NumericValue_Ziel_erreicht.REQ" dx1="340"/>
 			<Connection Source="rVT" Destination="Q_NumericValue_Ziel.REQ" dx1="7560"/>
 			<Connection Source="F_DWORD_TO_UDINT.CNF" Destination="NVS_UDINT.SET" dx1="480"/>
-			<Connection Source="NVS_UDINT.INITO" Destination="EI_TO_E.IN" dx1="300" dx2="300" dy="-300"/>
+			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" dx1="300" dx2="300" dy="-300"/>
 			<Connection Source="NVS_UDINT.GETO" Destination="Q_NumericValue_Ziel.REQ" dx1="760"/>
 			<Connection Source="NVS_UDINT.SETO" Destination="F_MOVE.REQ" dx1="360" dx2="360" dy="-520"/>
 			<Connection Source="NVS_UDINT.GETO" Destination="F_MOVE.REQ" dx1="460" dx2="273.33" dy="-740"/>
-			<Connection Source="EI_TO_E.OUT" Destination="NVS_UDINT.GET" dx1="80" dx2="80" dy="200"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="CV" Destination="F_GE.IN1" dx1="333.33"/>
