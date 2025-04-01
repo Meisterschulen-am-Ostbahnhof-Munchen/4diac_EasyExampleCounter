@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SubAppType Name="Zaehler" Comment="Subapplication Type" >
+<SubAppType Name="Zaehler" Comment="Subapplication Type">
 	<Identification Standard="61499-2">
 	</Identification>
 	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
 	</VersionInfo>
 	<SubAppInterfaceList>
 		<SubAppEventInputs>
-			<SubAppEvent Name="CU" Type="Event" Comment="Count Up" >
+			<SubAppEvent Name="CU" Type="Event" Comment="Count Up">
 			</SubAppEvent>
-			<SubAppEvent Name="CD" Type="Event" Comment="Count Down" >
+			<SubAppEvent Name="CD" Type="Event" Comment="Count Down">
 			</SubAppEvent>
-			<SubAppEvent Name="R" Type="Event" Comment="Reset" >
+			<SubAppEvent Name="R" Type="Event" Comment="Reset">
 			</SubAppEvent>
-			<SubAppEvent Name="rVT" Type="Event" Comment="refresh VT" >
+			<SubAppEvent Name="rVT" Type="Event" Comment="refresh VT">
 			</SubAppEvent>
 		</SubAppEventInputs>
 		<SubAppEventOutputs>
-			<SubAppEvent Name="CNF" Type="Event" Comment="Confirmation -- Counter Value was changed" >
+			<SubAppEvent Name="CNF" Type="Event" Comment="Confirmation -- Counter Value was changed">
 			</SubAppEvent>
 		</SubAppEventOutputs>
 		<InputVars>
@@ -24,7 +24,7 @@
 			<VarDeclaration Name="u16ObjId" Type="UINT"/>
 		</InputVars>
 		<OutputVars>
-			<VarDeclaration Name="CV" Type="UDINT" Comment="Counter Value" />
+			<VarDeclaration Name="CV" Type="UDINT" Comment="Counter Value"/>
 		</OutputVars>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
@@ -36,9 +36,7 @@
 			<Parameter Name="QI" Value="TRUE"/>
 			<Parameter Name="DEFAULT_VALUE" Value="UDINT#0"/>
 		</FB>
-		<FB Name="EI_TO_E" Type="EI_TO_E" x="1900" y="2600">
-		</FB>
-		<FB Name="E_MERGE3" Type="E_MERGE3" x="400" y="900">
+		<FB Name="E_MERGE3" Type="E_MERGE_3" x="400" y="900">
 		</FB>
 		<EventConnections>
 			<Connection Source="CU" Destination="E_CTUD_UDINT.CU" dx1="1620"/>
@@ -47,14 +45,13 @@
 			<Connection Source="rVT" Destination="Q_NumericValue.REQ" dx1="9080"/>
 			<Connection Source="rVT" Destination="CNF" dx1="1993.33"/>
 			<Connection Source="NVS_UDINT.GETO" Destination="E_CTUD_UDINT.LD" dx1="406.67" dx2="406.67" dy="-560"/>
-			<Connection Source="NVS_UDINT.INITO" Destination="EI_TO_E.IN" dx1="273.33" dx2="166.67" dy="-193.33"/>
-			<Connection Source="EI_TO_E.OUT" Destination="NVS_UDINT.GET" dx1="206.67"/>
-			<Connection Source="E_CTUD_UDINT.CO" Destination="E_MERGE3.EI1"/>
-			<Connection Source="E_CTUD_UDINT.RO" Destination="E_MERGE3.EI2"/>
-			<Connection Source="E_CTUD_UDINT.LDO" Destination="E_MERGE3.EI3"/>
+			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" dx1="273.33" dx2="273.33" dy="-193.33"/>
+			<Connection Source="E_CTUD_UDINT.CO" Destination="E_MERGE3.EI1" dx1="326.67"/>
+			<Connection Source="E_CTUD_UDINT.RO" Destination="E_MERGE3.EI2" dx1="326.67"/>
+			<Connection Source="E_CTUD_UDINT.LDO" Destination="E_MERGE3.EI3" dx1="326.67"/>
 			<Connection Source="E_MERGE3.EO" Destination="NVS_UDINT.SET" dx1="1240"/>
 			<Connection Source="E_MERGE3.EO" Destination="CNF" dx1="1280"/>
-			<Connection Source="E_MERGE3.EO" Destination="Q_NumericValue.REQ"/>
+			<Connection Source="E_MERGE3.EO" Destination="Q_NumericValue.REQ" dx1="1446.67"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="E_CTUD_UDINT.CV" Destination="Q_NumericValue.u32NewValue" dx1="3913.33"/>
