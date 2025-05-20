@@ -60,7 +60,6 @@
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
 			<Connection Source="E_CTUD_UDINT.CV" Destination="NVS_UDINT.VALUE" dx1="193.33"/>
-			<Connection Source="NVS_UDINT.VALUEO" Destination="E_CTUD_UDINT.PV" dx1="640" dx2="166.67" dy="-1086.67"/>
 			<Connection Source="KEY" Destination="NVS_UDINT.KEY" dx1="2226.67">
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
