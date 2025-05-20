@@ -2527,10 +2527,6 @@
 					<Value>0</Value>
 				</Property>
 			</PropertySheet>
-			<Objects>
-				<Object JVS-ID="21001"/>
-				<Object JVS-ID="21002"/>
-			</Objects>
 		</Object>
 		<Object Class="CRectangle" Name="Rectangle" ObjectName="LinearBargraph_Tageszaehler" Pinned="FALSE" JVS-ID="18001">
 			<PropertySheet Name="Rectangle">
