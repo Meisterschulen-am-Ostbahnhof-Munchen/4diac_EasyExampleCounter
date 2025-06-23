@@ -29,12 +29,12 @@
 		</SubApp>
 		<SubApp Name="TageszaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-266.67">
 			<Parameter Name="KEY" Value="NVS_Keys::KEY_TAGESZIEL"/>
-			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Gesamtziel"/>
+			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Tagesziel"/>
 			<Parameter Name="u16ObjId_Pointer" Value="DefaultPool::ObjectPointer_Tagesziel"/>
 		</SubApp>
 		<SubApp Name="GesamtzaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-2266.67">
 			<Parameter Name="KEY" Value="NVS_Keys::KEY_GESAMTZIEL"/>
-			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Tagesziel"/>
+			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Gesamtziel"/>
 			<Parameter Name="u16ObjId_Pointer" Value="DefaultPool::ObjectPointer_Gesamtziel"/>
 		</SubApp>
 		<EventConnections>
