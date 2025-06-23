@@ -100,10 +100,10 @@ EMB_RES;<Request ID="99" Action="WRITE"><Connection Source="21001" Destination="
 EMB_RES;<Request ID="100" Action="WRITE"><Connection Source="&apos;Tageszaehler&apos;" Destination="App.Counter.func.Tageszaehler.NVS_UDINT.KEY" /></Request>
 EMB_RES;<Request ID="101" Action="WRITE"><Connection Source="21000" Destination="App.Counter.func.Tageszaehler.Q_NumericValue.u16ObjId" /></Request>
 EMB_RES;<Request ID="102" Action="WRITE"><Connection Source="&apos;Tagesziel&apos;" Destination="App.Counter.func.TageszaehlerVergleich.NVS_UDINT.KEY" /></Request>
-EMB_RES;<Request ID="103" Action="WRITE"><Connection Source="21002" Destination="App.Counter.func.TageszaehlerVergleich.Q_NumericValue_Ziel.u16ObjId" /></Request>
+EMB_RES;<Request ID="103" Action="WRITE"><Connection Source="21003" Destination="App.Counter.func.TageszaehlerVergleich.Q_NumericValue_Ziel.u16ObjId" /></Request>
 EMB_RES;<Request ID="104" Action="WRITE"><Connection Source="27001" Destination="App.Counter.func.TageszaehlerVergleich.Q_NumericValue_Ziel_erreicht.u16ObjId" /></Request>
 EMB_RES;<Request ID="105" Action="WRITE"><Connection Source="&apos;Gesamtziel&apos;" Destination="App.Counter.func.GesamtzaehlerVergleich.NVS_UDINT.KEY" /></Request>
-EMB_RES;<Request ID="106" Action="WRITE"><Connection Source="21003" Destination="App.Counter.func.GesamtzaehlerVergleich.Q_NumericValue_Ziel.u16ObjId" /></Request>
+EMB_RES;<Request ID="106" Action="WRITE"><Connection Source="21002" Destination="App.Counter.func.GesamtzaehlerVergleich.Q_NumericValue_Ziel.u16ObjId" /></Request>
 EMB_RES;<Request ID="107" Action="WRITE"><Connection Source="27003" Destination="App.Counter.func.GesamtzaehlerVergleich.Q_NumericValue_Ziel_erreicht.u16ObjId" /></Request>
 EMB_RES;<Request ID="108" Action="CREATE"><Connection Source="App.Counter.func.VT_active.E_D_FF.EO" Destination="App.Counter.func.Gesamtzaehler.Q_NumericValue.REQ" /></Request>
 EMB_RES;<Request ID="109" Action="CREATE"><Connection Source="App.Counter.func.VT_active.E_D_FF.EO" Destination="App.Counter.func.GesamtzaehlerVergleich.F_GE.REQ" /></Request>
