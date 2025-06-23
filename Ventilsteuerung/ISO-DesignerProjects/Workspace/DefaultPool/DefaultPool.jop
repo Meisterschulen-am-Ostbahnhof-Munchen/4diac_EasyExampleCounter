@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<JetView-ObjectPool Version="3.0" ProductVersion="5.6.2.5533">
+<JetView-ObjectPool Version="3.0" ProductVersion="5.7.0.6283">
 	<Objects>
 		<Object Class="CNumberVariable" JVS-ID="21000" ObjectName="NumberVariable_Tageszaehler" Pinned="FALSE">
 			<Property Name="Group">
@@ -67,7 +67,7 @@
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>12</Value>
+					<Value>8</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>16</Value>
@@ -88,7 +88,7 @@
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>9</Value>
+					<Value>6</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>12</Value>
@@ -124,7 +124,7 @@
 					<Value>Lucida Console</Value>
 				</Property>
 				<Property Name="Size">
-					<Value>18</Value>
+					<Value>12</Value>
 				</Property>
 				<Property Name="Height">
 					<Value>24</Value>
@@ -145,7 +145,7 @@
 					<Value>0</Value>
 				</Property>
 				<Property Name="PointWidth">
-					<Value>12</Value>
+					<Value>8</Value>
 				</Property>
 				<Property Name="Width">
 					<Value>16</Value>
@@ -874,6 +874,9 @@
 				<Property Name="Value">
 					<Value>MQAyADMAAAA=</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -1003,6 +1006,9 @@
 				<Property Name="Value">
 					<Value>MQAyADMAAAA=</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -1110,6 +1116,9 @@
 						<![CDATA[RgBhAHMAcwANAAoAWgDkAGgAbABlAHIAAAA=]]>
 					</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -1212,6 +1221,9 @@
 					<Value>
 						<![CDATA[UgBlAHMAZQB0AA0ACgBHAGUAcwBhAG0AdAAAAA==]]>
 					</Value>
+				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
 				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
@@ -1316,6 +1328,9 @@
 						<![CDATA[RwBlAHMAYQBtAHQAegDkAGgAbABlAHIAAAA=]]>
 					</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -1418,6 +1433,9 @@
 					<Value>
 						<![CDATA[VABhAGcAZQBzAHoA5ABoAGwAZQByAAAA]]>
 					</Value>
+				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
 				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
@@ -1522,6 +1540,9 @@
 						<![CDATA[UgBlAHMAZQB0AA0ACgBUAGEAZwBlAHMAAAA=]]>
 					</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -1624,6 +1645,9 @@
 					<Value>
 						<![CDATA[UgBlAHMAZQB0AA0ACgBHAGUAcwBhAG0AdAAAAA==]]>
 					</Value>
+				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
 				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
@@ -1728,6 +1752,9 @@
 						<![CDATA[UgBlAHMAZQB0AA0ACgBUAGEAZwBlAHMAAAA=]]>
 					</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -1830,6 +1857,9 @@
 					<Value>
 						<![CDATA[WgBpAGUAbAAAAA==]]>
 					</Value>
+				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
 				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
@@ -1934,6 +1964,9 @@
 						<![CDATA[WgBpAGUAbAAgAEUAcgByAGUAaQBjAGgAdAAAAA==]]>
 					</Value>
 				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
+				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
 				</Property>
@@ -2036,6 +2069,9 @@
 					<Value>
 						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
+				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
 				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
@@ -2140,6 +2176,9 @@
 					<Value>
 						<![CDATA[VABlAHgAdAAAAA==]]>
 					</Value>
+				</Property>
+				<Property Name="SetLengthAsMaximumLength">
+					<Value>0</Value>
 				</Property>
 				<Property Name="StringLength">
 					<Value>4</Value>
@@ -2512,10 +2551,10 @@
 					<Value>210</Value>
 				</Property>
 				<Property Name="PosValVariableObjectID">
-					<Value>21001</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="TargetValVariableObjectID">
-					<Value>21002</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="MinValVarObjectID">
 					<Value>-1</Value>
