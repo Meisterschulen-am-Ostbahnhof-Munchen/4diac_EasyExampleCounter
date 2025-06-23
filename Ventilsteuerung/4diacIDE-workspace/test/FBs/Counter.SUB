@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="Counter" Comment="Subapplication Type" >
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
+	</VersionInfo>
+	<SubAppInterfaceList>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<SubApp Name="mapping" Type="mapping" x="-2400" y="-3000">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<SubApp Name="func" Type="func" x="-2400" y="-2600">
+		</SubApp>
+	</SubAppNetwork>
+</SubAppType>

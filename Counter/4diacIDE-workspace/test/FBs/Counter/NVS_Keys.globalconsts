@@ -1,8 +1,0 @@
-//NVS operates on key-value pairs. Keys are ASCII strings; the maximum key length is currently 15 characters.
-VAR_GLOBAL CONSTANT
-    //                              '123456789012345'
-    KEY_GESAMTZAEHLER   : STRING := 'Gesamtzaehler';
-    KEY_GESAMTZIEL      : STRING := 'Gesamtziel';    
-    KEY_TAGESZAEHLER    : STRING := 'Tageszaehler';
-    KEY_TAGESZIEL       : STRING := 'Tagesziel';
-END_VAR

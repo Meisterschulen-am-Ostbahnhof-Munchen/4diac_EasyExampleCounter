@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="Reset" Comment="Subapplication Type" >
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
+	</VersionInfo>
+	<SubAppInterfaceList>
+		<SubAppEventOutputs>
+			<SubAppEvent Name="IND" Type="Event">
+			</SubAppEvent>
+		</SubAppEventOutputs>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="Button" Type="IE" x="0" y="0">
+			<Parameter Name="QI" Value="TRUE"/>
+		</FB>
+		<FB Name="SoftKey" Type="IE" x="0" y="933.33">
+			<Parameter Name="QI" Value="TRUE"/>
+		</FB>
+		<EventConnections>
+			<Connection Source="Button.IND" Destination="IND" dx1="1566.67"/>
+			<Connection Source="SoftKey.IND" Destination="IND" dx1="1626.67"/>
+		</EventConnections>
+	</SubAppNetwork>
+</SubAppType>

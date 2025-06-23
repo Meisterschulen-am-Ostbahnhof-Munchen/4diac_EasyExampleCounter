@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="func" Comment="Subapplication Type" >
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
+	</VersionInfo>
+	<SubAppInterfaceList>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<SubApp Name="VT_active" Type="VT_active" x="266.67" y="-400">
+			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
+			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
+		</SubApp>
+		<SubApp Name="MinusMinus" Type="Tuple" x="0" y="-1466.67">
+		</SubApp>
+		<SubApp Name="PlusPlus" Type="Tuple" x="0" y="-1866.67">
+		</SubApp>
+		<SubApp Name="Reset_Gesamtzaehler" Type="Reset" x="0" y="-933.33">
+		</SubApp>
+		<SubApp Name="Reset_Tageszaehler" Type="Reset" x="0" y="620">
+		</SubApp>
+		<SubApp Name="Gesamtzaehler" Type="Zaehler" x="4000" y="-2000">
+			<Parameter Name="KEY" Value="NVS_Keys::KEY_GESAMTZAEHLER"/>
+			<Parameter Name="u16ObjId" Value="DefaultPool::NumberVariable_Gesamtzaehler"/>
+		</SubApp>
+		<SubApp Name="Tageszaehler" Type="Zaehler" x="4000" y="0">
+			<Parameter Name="KEY" Value="NVS_Keys::KEY_TAGESZAEHLER"/>
+			<Parameter Name="u16ObjId" Value="DefaultPool::NumberVariable_Tageszaehler"/>
+		</SubApp>
+		<SubApp Name="TageszaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-266.67">
+			<Parameter Name="KEY" Value="NVS_Keys::KEY_TAGESZIEL"/>
+			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Tagesziel"/>
+			<Parameter Name="u16ObjId_Pointer" Value="DefaultPool::ObjectPointer_Tagesziel"/>
+		</SubApp>
+		<SubApp Name="GesamtzaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-2266.67">
+			<Parameter Name="KEY" Value="NVS_Keys::KEY_GESAMTZIEL"/>
+			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Gesamtziel"/>
+			<Parameter Name="u16ObjId_Pointer" Value="DefaultPool::ObjectPointer_Gesamtziel"/>
+		</SubApp>
+		<EventConnections>
+			<Connection Source="PlusPlus.IND" Destination="Gesamtzaehler.CU" dx1="1740"/>
+			<Connection Source="MinusMinus.IND" Destination="Gesamtzaehler.CD" dx1="1740"/>
+			<Connection Source="Reset_Gesamtzaehler.IND" Destination="Gesamtzaehler.R" dx1="1313.33"/>
+			<Connection Source="VT_active.EO" Destination="Gesamtzaehler.rVT" dx1="1493.33"/>
+			<Connection Source="PlusPlus.IND" Destination="Tageszaehler.CU" dx1="1026.67"/>
+			<Connection Source="MinusMinus.IND" Destination="Tageszaehler.CD" dx1="1740"/>
+			<Connection Source="Reset_Tageszaehler.IND" Destination="Tageszaehler.R" dx1="1326.67"/>
+			<Connection Source="VT_active.EO" Destination="Tageszaehler.rVT" dx1="1513.33"/>
+			<Connection Source="Tageszaehler.CNF" Destination="TageszaehlerVergleich.REQ" dx1="453.33"/>
+			<Connection Source="VT_active.EO" Destination="TageszaehlerVergleich.rVT" dx1="4693.33"/>
+			<Connection Source="Gesamtzaehler.CNF" Destination="GesamtzaehlerVergleich.REQ" dx1="633.33"/>
+			<Connection Source="VT_active.EO" Destination="GesamtzaehlerVergleich.rVT" dx1="4606.67"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="Tageszaehler.CV" Destination="TageszaehlerVergleich.CV" dx1="506.67"/>
+			<Connection Source="Gesamtzaehler.CV" Destination="GesamtzaehlerVergleich.CV" dx1="480"/>
+		</DataConnections>
+	</SubAppNetwork>
+</SubAppType>

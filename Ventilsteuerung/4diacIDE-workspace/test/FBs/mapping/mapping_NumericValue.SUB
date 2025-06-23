@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="mapping_NumericValue" Comment="Subapplication Type">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz" Date="2023-01-29">
+	</VersionInfo>
+	<SubAppInterfaceList>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="UT_SoftkeyMapping_UP" Type="UT_NumericValueInputMapping" x="1053.33" y="926.67">
+			<Parameter Name="QI" Value="TRUE"/>
+			<Parameter Name="u16ObjId_1" Value="DefaultPool::NumberVariable_Gesamtziel"/>
+			<Parameter Name="NumericValueInput_1" Value="'App.Counter.func.GesamtzaehlerVergleich.IN_NumberVariable'"/>
+			<Parameter Name="u16ObjId_2" Value="DefaultPool::NumberVariable_Tagesziel"/>
+			<Parameter Name="NumericValueInput_2" Value="'App.Counter.func.TageszaehlerVergleich.IN_NumberVariable'"/>
+		</FB>
+	</SubAppNetwork>
+</SubAppType>

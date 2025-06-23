@@ -10,7 +10,7 @@
 
 Nichtflüchtiges Speichern von Variablen:
 
-[https://meisterschulen-am-ostbahnhof-munchen-docs.readthedocs.io/projects/visual-programming-languages-docs/de/latest/typelibrary/esp32/nvs/NVS_UDINT.html](https://meisterschulen-am-ostbahnhof-munchen-docs.readthedocs.io/projects/visual-programming-languages-docs/de/latest/typelibrary/esp32/nvs/NVS_UDINT.html)
+[https://docs.ms-muc-docs.de/projects/visual-programming-languages-docs/de/latest/typelibrary/esp32/nvs/NVS_UDINT.html](https://docs.ms-muc-docs.de/projects/visual-programming-languages-docs/de/latest/typelibrary/esp32/nvs/NVS_UDINT.html)
 
 ## Hauptmodul:
 
