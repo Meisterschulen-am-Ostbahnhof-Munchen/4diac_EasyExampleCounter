@@ -21,7 +21,7 @@
 	<SubAppNetwork>
 		<FB Name="Q_NumericValue_Ziel_erreicht" Type="Q_NumericValue" x="7066.67" y="-933.33">
 		</FB>
-		<FB Name="F_GE" Type="F_GE" x="2660" y="-660">
+		<FB Name="F_GE" Type="iec61131::comparison::F_GE" x="2660" y="-660">
 		</FB>
 		<FB Name="NVS_UDINT" Type="NVS" x="5060" y="800">
 			<Parameter Name="QI" Value="TRUE"/>
@@ -29,16 +29,17 @@
 		</FB>
 		<FB Name="Q_NumericValue_Ziel" Type="Q_NumericValue" x="9200" y="926.67">
 		</FB>
-		<FB Name="F_SEL" Type="F_SEL" x="4520" y="-520">
+		<FB Name="F_SEL" Type="iec61131::selection::F_SEL" x="4520" y="-520">
 			<Parameter Name="IN0" Value="isobus::ID_NULL"/>
 			<Parameter Name="IN1" Value="DefaultPool::OutputString_ZielErreicht"/>
 		</FB>
-		<FB Name="IN_NumberVariable" Type="ID" x="1600" y="1200">
+		<FB Name="IN_NumberVariable" Type="eclipse4diac::io::ID" x="1600" y="1200">
 			<Parameter Name="QI" Value="TRUE"/>
 		</FB>
-		<FB Name="F_DWORD_TO_UDINT" Type="F_DWORD_TO_UDINT" x="3060" y="1200">
+		<FB Name="F_DWORD_TO_UDINT" Type="iec61131::conversion::F_DWORD_TO_UDINT" x="3060" y="1200">
 		</FB>
-		<FB Name="F_MOVE" Type="F_MOVE" x="800" y="-200">
+		<FB Name="F_MOVE" Type="iec61131::arithmetic::F_MOVE" x="800" y="-200">
+			<Attribute Name="DataType" Value="UDINT"/>
 			<Attribute Name="DataType" Value="UDINT"/>
 		</FB>
 		<EventConnections>
@@ -51,7 +52,7 @@
 			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" dx1="300" dx2="300" dy="-300"/>
 			<Connection Source="NVS_UDINT.GETO" Destination="Q_NumericValue_Ziel.REQ" dx1="760"/>
 			<Connection Source="NVS_UDINT.SETO" Destination="F_MOVE.REQ" dx1="360" dx2="360" dy="-520"/>
-			<Connection Source="NVS_UDINT.GETO" Destination="F_MOVE.REQ" dx1="460" dx2="273.33" dy="-740"/>
+			<Connection Source="NVS_UDINT.GETO" Destination="F_MOVE.REQ" dx1="460" dx2="460" dy="-740"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="CV" Destination="F_GE.IN1" dx1="333.33"/>
@@ -69,7 +70,7 @@
 			</Connection>
 			<Connection Source="F_DWORD_TO_UDINT.OUT" Destination="NVS_UDINT.VALUE" dx1="486.67"/>
 			<Connection Source="NVS_UDINT.VALUEO" Destination="Q_NumericValue_Ziel.u32NewValue" dx1="760"/>
-			<Connection Source="NVS_UDINT.VALUEO" Destination="F_MOVE.IN" dx1="566.67" dx2="186.67" dy="-1280"/>
+			<Connection Source="NVS_UDINT.VALUEO" Destination="F_MOVE.IN" dx1="566.67" dx2="566.67" dy="-1280"/>
 			<Connection Source="F_MOVE.OUT" Destination="F_GE.IN2" dx1="646.67"/>
 		</DataConnections>
 	</SubAppNetwork>
