@@ -14,15 +14,20 @@
 		<Parameter Name="MGR_ID" Value="Computers::C_00" Comment="Device manager socket ID"/>
 		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
 		<Attribute Name="Color" Type="STRING" Value="255,190,111"/>
-		<Resource Name="EMB_RES" Type="" x="0" y="0">
+		<Resource Name="EMB_RES" Type="iec61499::hardware::EMB_RES" x="0" y="0">
 			<FBNetwork>
-				<FB Name="E_RESTART" Type="iec61499::events::E_RESTART" x="2700" y="900">
+				<FB Name="E_TRIG" Type="iec61499::events::E_TRIG" x="2000" y="500">
+					<Parameter Name="EVENTTYPE" Value="'EInit'"/>
 				</FB>
+				<EventConnections>
+					<Connection Source="START.COLD" Destination="E_TRIG.REQ" dx1="546.67"/>
+					<Connection Source="START.WARM" Destination="E_TRIG.REQ" dx1="500"/>
+				</EventConnections>
 			</FBNetwork>
 		</Resource>
 	</Device>
-	<Segment Name="Ethernet" Type="iec61499::hardware::Ethernet" x="3300" y="1440" dx1="2000">
-		<Attribute Name="Color" Type="STRING" Value="104,158,221"/>
+	<Segment Name="Ethernet" Type="iec61499::hardware::Ethernet" x="3120" y="1200" dx1="2000">
+		<Attribute Name="Color" Type="STRING" Value="200,32,38"/>
 	</Segment>
 	<Mapping From="App.Counter" To="FORTE_PC.EMB_RES"/>
 	<Link SegmentName="Ethernet" CommResource="FORTE_PC" Comment="">
