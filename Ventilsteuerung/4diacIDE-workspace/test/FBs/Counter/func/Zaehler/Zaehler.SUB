@@ -28,7 +28,7 @@
 		</OutputVars>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<FB Name="E_CTUD_UDINT" Type="iec61499::events::E_CTU" x="-1100" y="900">
+		<FB Name="E_CTUD_UDINT" Type="iec61499::events::E_CTUD_UDINT" x="-1100" y="900">
 		</FB>
 		<FB Name="Q_NumericValue" Type="Q_NumericValue" x="4300" y="800">
 		</FB>
@@ -48,7 +48,9 @@
 			<Connection Source="E_MERGE_3.EO" Destination="NVS_UDINT.SET" dx1="1240"/>
 			<Connection Source="E_MERGE_3.EO" Destination="CNF" dx1="1280"/>
 			<Connection Source="E_MERGE_3.EO" Destination="Q_NumericValue.REQ" dx1="1446.67"/>
-			<Connection Source="E_CTUD_UDINT.CUO" Destination="E_MERGE_3.EI1"/>
+			<Connection Source="E_CTUD_UDINT.CO" Destination="E_MERGE_3.EI1"/>
+			<Connection Source="E_CTUD_UDINT.LDO" Destination="E_MERGE_3.EI3"/>
+			<Connection Source="CD" Destination="E_CTUD_UDINT.CD" dx1="1433.33"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="E_CTUD_UDINT.CV" Destination="Q_NumericValue.u32NewValue" dx1="3913.33"/>
