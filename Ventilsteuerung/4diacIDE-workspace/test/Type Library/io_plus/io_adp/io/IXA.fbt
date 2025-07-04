@@ -47,4 +47,5 @@
 			<Connection Source="IX.STATUS" Destination="STATUS" dx1="3893.33"/>
 		</DataConnections>
 	</FBNetwork>
+	<Attribute Name="eclipse4diac::core::TypeHash" Value="''"/>
 </FBType>
