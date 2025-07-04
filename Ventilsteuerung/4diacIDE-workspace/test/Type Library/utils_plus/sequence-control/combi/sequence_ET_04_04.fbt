@@ -93,19 +93,19 @@
 			<ECState Name="sState_01" x="2400" y="1600">
 				<ECAction Algorithm="State_01_C" Output="CNF"/>
 				<ECAction Algorithm="State_01_E" Output="EO_S1"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_02" x="2400" y="2400">
 				<ECAction Algorithm="State_01_X" Output="EO_S1"/>
 				<ECAction Algorithm="State_02_C" Output="CNF"/>
 				<ECAction Algorithm="State_02_E" Output="EO_S2"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_03" x="2400" y="3200">
 				<ECAction Algorithm="State_02_X" Output="EO_S2"/>
 				<ECAction Algorithm="State_03_C" Output="CNF"/>
 				<ECAction Algorithm="State_03_E" Output="EO_S3"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_04" x="2400" y="4000">
 				<ECAction Algorithm="State_03_X" Output="EO_S3"/>
@@ -116,25 +116,25 @@
 				<ECAction Algorithm="State_04_X" Output="EO_S4"/>
 				<ECAction Algorithm="State_05_C" Output="CNF"/>
 				<ECAction Algorithm="State_05_E" Output="EO_S5"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_06" x="2400" y="5600">
 				<ECAction Algorithm="State_05_X" Output="EO_S5"/>
 				<ECAction Algorithm="State_06_C" Output="CNF"/>
 				<ECAction Algorithm="State_06_E" Output="EO_S6"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_07" x="2400" y="6400">
 				<ECAction Algorithm="State_06_X" Output="EO_S6"/>
 				<ECAction Algorithm="State_07_C" Output="CNF"/>
 				<ECAction Algorithm="State_07_E" Output="EO_S7"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_08" x="2400" y="7200">
 				<ECAction Algorithm="State_07_X" Output="EO_S7"/>
 				<ECAction Algorithm="State_08_C" Output="CNF"/>
 				<ECAction Algorithm="State_08_E" Output="EO_S8"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_00" x="2400" y="8000">
 				<ECAction Algorithm="State_08_X" Output="EO_S8"/>
@@ -143,7 +143,7 @@
 				<ECAction/>
 			</ECState>
 			<ECState Name="sRESET" x="-2400" y="8000">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_01_X" Output="EO_S1"/>
 				<ECAction Algorithm="State_02_X" Output="EO_S2"/>
 				<ECAction Algorithm="State_03_X" Output="EO_S3"/>
@@ -155,14 +155,14 @@
 				<ECAction Output="EO_RESET"/>
 			</ECState>
 			<ECState Name="sState_05_RESET" x="5440" y="3760">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_01_X" Output="EO_S1"/>
 				<ECAction Algorithm="State_02_X" Output="EO_S2"/>
 				<ECAction Algorithm="State_03_X" Output="EO_S3"/>
 				<ECAction Output="EO_RESET"/>
 			</ECState>
 			<ECState Name="sState_00_RESET" x="5200" y="8000">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_04_X" Output="EO_S4"/>
 				<ECAction Algorithm="State_05_X" Output="EO_S5"/>
 				<ECAction Algorithm="State_06_X" Output="EO_S6"/>
@@ -170,9 +170,9 @@
 				<ECAction Algorithm="State_08_X" Output="EO_S8"/>
 				<ECAction Output="EO_RESET"/>
 			</ECState>
-			<ECTransition Source="sState_01" Destination="sState_02" Condition="[timeOut.TimeOut]" Comment="" x="2620" y="1993.33"/>
-			<ECTransition Source="sState_02" Destination="sState_03" Condition="[timeOut.TimeOut]" Comment="" x="2653.33" y="2806.67"/>
-			<ECTransition Source="sState_03" Destination="sState_04" Condition="[timeOut.TimeOut]" Comment="" x="2653.33" y="3606.67"/>
+			<ECTransition Source="sState_01" Destination="sState_02" Condition="timeOut.TimeOut" Comment="" x="2620" y="1993.33"/>
+			<ECTransition Source="sState_02" Destination="sState_03" Condition="timeOut.TimeOut" Comment="" x="2653.33" y="2806.67"/>
+			<ECTransition Source="sState_03" Destination="sState_04" Condition="timeOut.TimeOut" Comment="" x="2653.33" y="3606.67"/>
 			<ECTransition Source="sState_00" Destination="sState_01" Condition="START_S1" Comment="" x="606.67" y="4866.67"/>
 			<ECTransition Source="xSTART" Destination="sState_01" Condition="START_S1" Comment="" x="593.33" y="920"/>
 			<ECTransition Source="sState_01" Destination="sRESET" Condition="EI_RESET" Comment="" x="-1500" y="2160"/>
@@ -180,13 +180,13 @@
 			<ECTransition Source="sState_03" Destination="sRESET" Condition="EI_RESET" Comment="" x="-986.67" y="3493.33"/>
 			<ECTransition Source="sState_04" Destination="sState_05" Condition="S4_S5" Comment="" x="2653.33" y="4446.67"/>
 			<ECTransition Source="sState_04" Destination="sRESET" Condition="EI_RESET" Comment="" x="-1046.67" y="4740"/>
-			<ECTransition Source="sState_05" Destination="sState_06" Condition="[timeOut.TimeOut]" Comment="" x="2653.33" y="5240"/>
+			<ECTransition Source="sState_05" Destination="sState_06" Condition="timeOut.TimeOut" Comment="" x="2653.33" y="5240"/>
 			<ECTransition Source="sState_05" Destination="sRESET" Condition="EI_RESET" Comment="" x="-946.67" y="5286.67"/>
 			<ECTransition Source="sRESET" Destination="sState_00" Condition="1" Comment="" x="-473.33" y="7646.67"/>
-			<ECTransition Source="sState_07" Destination="sState_08" Condition="[timeOut.TimeOut]" Comment="" x="2680" y="6793.33"/>
+			<ECTransition Source="sState_07" Destination="sState_08" Condition="timeOut.TimeOut" Comment="" x="2680" y="6793.33"/>
 			<ECTransition Source="sState_07" Destination="sRESET" Condition="EI_RESET" Comment="" x="-966.67" y="6500"/>
-			<ECTransition Source="sState_06" Destination="sState_07" Condition="[timeOut.TimeOut]" Comment="" x="2620" y="6000"/>
-			<ECTransition Source="sState_08" Destination="sState_00" Condition="[timeOut.TimeOut]" Comment="" x="2660" y="7626.67"/>
+			<ECTransition Source="sState_06" Destination="sState_07" Condition="timeOut.TimeOut" Comment="" x="2620" y="6000"/>
+			<ECTransition Source="sState_08" Destination="sState_00" Condition="timeOut.TimeOut" Comment="" x="2660" y="7626.67"/>
 			<ECTransition Source="sState_08" Destination="sRESET" Condition="EI_RESET" Comment="" x="-780" y="7253.33"/>
 			<ECTransition Source="sState_06" Destination="sRESET" Condition="EI_RESET" Comment="" x="-966.67" y="5853.33"/>
 			<ECTransition Source="sState_00_RESET" Destination="sState_00" Condition="1" Comment="" x="3686.67" y="7906.67"/>

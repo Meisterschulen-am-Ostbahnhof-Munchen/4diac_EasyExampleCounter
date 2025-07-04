@@ -28,7 +28,7 @@
 			<VarDeclaration Name="STATUS" Type="STRING" Comment="Service Status"/>
 		</OutputVars>
 		<Plugs>
-			<AdapterDeclaration Name="IN" Type="AX" x="3900" y="1300"/>
+			<AdapterDeclaration Name="IN" Type="AX"/>
 		</Plugs>
 	</InterfaceList>
 	<FBNetwork>

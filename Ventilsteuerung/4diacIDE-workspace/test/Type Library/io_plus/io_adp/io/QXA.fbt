@@ -32,7 +32,7 @@
 			<VarDeclaration Name="STATUS" Type="STRING" Comment="Service Status"/>
 		</OutputVars>
 		<Sockets>
-			<AdapterDeclaration Name="OUT" Type="AX" x="-500" y="1100"/>
+			<AdapterDeclaration Name="OUT" Type="AX"/>
 		</Sockets>
 	</InterfaceList>
 	<FBNetwork>
