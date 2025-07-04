@@ -21,5 +21,4 @@
 			<Connection Source="AE_IN.E1" Destination="CNF" dx1="2293.33"/>
 		</EventConnections>
 	</FBNetwork>
-	<Attribute Name="eclipse4diac::core::TypeHash" Value="''"/>
 </FBType>

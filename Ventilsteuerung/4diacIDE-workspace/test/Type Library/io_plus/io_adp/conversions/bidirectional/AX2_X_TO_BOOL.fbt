@@ -43,5 +43,4 @@
 			<Connection Source="OUT" Destination="AX2_IN.DI1" dx1="3033.33"/>
 		</DataConnections>
 	</FBNetwork>
-	<Attribute Name="eclipse4diac::core::TypeHash" Value="''"/>
 </FBType>
