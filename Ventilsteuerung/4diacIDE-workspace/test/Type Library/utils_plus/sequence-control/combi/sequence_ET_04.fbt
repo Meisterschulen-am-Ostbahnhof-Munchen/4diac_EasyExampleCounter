@@ -64,42 +64,42 @@
 			<ECState Name="xSTART" Comment="Initial State" x="0" y="800">
 			</ECState>
 			<ECState Name="sState_01" x="2400" y="1600">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction/>
 				<ECAction Algorithm="State_01_C" Output="CNF"/>
 				<ECAction Algorithm="State_01_E" Output="EO_S1"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_02" x="2400" y="2400">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_01_X" Output="EO_S1"/>
 				<ECAction Algorithm="State_02_C" Output="CNF"/>
 				<ECAction Algorithm="State_02_E" Output="EO_S2"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_03" x="2400" y="3200">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_02_X" Output="EO_S2"/>
 				<ECAction Algorithm="State_03_C" Output="CNF"/>
 				<ECAction Algorithm="State_03_E" Output="EO_S3"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_04" x="2400" y="4000">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_03_X" Output="EO_S3"/>
 				<ECAction Algorithm="State_04_C" Output="CNF"/>
 				<ECAction Algorithm="State_04_E" Output="EO_S4"/>
-				<ECAction/>
+				<ECAction Output="timeOut.START"/>
 			</ECState>
 			<ECState Name="sState_00" x="2400" y="4800">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_04_X" Output="EO_S4"/>
 				<ECAction Algorithm="State_00_C" Output="CNF"/>
 				<ECAction/>
 				<ECAction/>
 			</ECState>
 			<ECState Name="sRESET" x="-800" y="4800">
-				<ECAction/>
+				<ECAction Output="timeOut.STOP"/>
 				<ECAction Algorithm="State_01_X" Output="EO_S1"/>
 				<ECAction Algorithm="State_02_X" Output="EO_S2"/>
 				<ECAction Algorithm="State_03_X" Output="EO_S3"/>
