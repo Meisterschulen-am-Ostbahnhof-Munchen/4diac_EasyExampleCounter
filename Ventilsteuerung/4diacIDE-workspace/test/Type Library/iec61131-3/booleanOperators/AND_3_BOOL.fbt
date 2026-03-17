@@ -4,9 +4,17 @@
 	</Identification>
 	<VersionInfo Organization="Profactor GmbH" Version="1.0" Author="Matthias Plasch" Date="2014-10-11">
 	</VersionInfo>
+<<<<<<< HEAD
 	<VersionInfo Organization="HR Agrartechnik GmbH" Version="1.1" Author="Franz Höpfinger" Date="2025-03-04" Remarks="copy AND_2 and made AND_2_BOOL">
 	</VersionInfo>
 	<CompilerInfo>
+=======
+	<VersionInfo Version="3.0" Author="Patrick Aigner" Date="2025-04-14" Remarks="changed package">
+	</VersionInfo>
+	<VersionInfo Organization="HR Agrartechnik GmbH" Version="1.1" Author="Franz Höpfinger" Date="2025-03-04" Remarks="copy AND_2 and made AND_2_BOOL">
+	</VersionInfo>
+	<CompilerInfo packageName="iec61131::bitwiseOperators">
+>>>>>>> feature/4diac-ide_3.0.0-win32.win32.x86_64_nightly_2025-06-06_0544
 	</CompilerInfo>
 	<InterfaceList>
 		<EventInputs>
@@ -30,5 +38,9 @@
 			<VarDeclaration Name="OUT" Type="BOOL" Comment="AND result"/>
 		</OutputVars>
 	</InterfaceList>
+<<<<<<< HEAD
 	<Attribute Name="GenericClassName" Value="'GEN_AND'"/>
+=======
+	<Attribute Name="eclipse4diac::core::GenericClassName" Value="'GEN_AND'"/>
+>>>>>>> feature/4diac-ide_3.0.0-win32.win32.x86_64_nightly_2025-06-06_0544
 </FBType>
