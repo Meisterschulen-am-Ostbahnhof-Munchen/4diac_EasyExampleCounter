@@ -49,6 +49,7 @@
 			<Connection Source="E_CTUD_UDINT.CO" Destination="E_MERGE_3.EI1"/>
 			<Connection Source="E_CTUD_UDINT.LDO" Destination="E_MERGE_3.EI3"/>
 			<Connection Source="CD" Destination="E_CTUD_UDINT.CD" dx1="1433.33"/>
+			<Connection Source="NVS_UDINT.GETO" Destination="E_CTUD_UDINT.LD" dx1="793.33" dx2="1026.67" dy="986.67"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="E_CTUD_UDINT.CV" Destination="Q_NumericValue.u32NewValue" dx1="3913.33"/>
@@ -57,7 +58,7 @@
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
 			<Connection Source="E_CTUD_UDINT.CV" Destination="NVS_UDINT.VALUE" dx1="193.33"/>
-			<Connection Source="NVS_UDINT.VALUEO" Destination="E_CTUD_UDINT.PV" dx1="640" dx2="640" dy="-1086.67"/>
+			<Connection Source="NVS_UDINT.VALUEO" Destination="E_CTUD_UDINT.PV" dx1="640" dx2="640" dy="413.33"/>
 			<Connection Source="KEY" Destination="NVS_UDINT.KEY" dx1="2226.67">
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
