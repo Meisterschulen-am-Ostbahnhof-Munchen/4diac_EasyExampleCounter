@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="Reset" Comment="1 Button, 1 Softkey">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
+	</VersionInfo>
+	<CompilerInfo packageName="FBs::Counter::subs::Buttons">
+		<Import declaration="isobus::UT::Q::const::IDs::ID_NULL"/>
+		<Import declaration="isobus::UT::io::Button::ButtonActivationCode::BT_RELEASED_UNLATCHED"/>
+		<Import declaration="isobus::UT::io::Softkey::SoftKeyActivationCode::SK_RELEASED"/>
+	</CompilerInfo>
+	<SubAppInterfaceList>
+		<SubAppEventOutputs>
+			<SubAppEvent Name="IND" Type="Event">
+			</SubAppEvent>
+		</SubAppEventOutputs>
+		<InputVars>
+			<VarDeclaration Name="u16ObjId_BT" Type="UINT" Comment="Object ID Button" InitialValue="ID_NULL"/>
+			<VarDeclaration Name="u16ObjId_SK" Type="UINT" Comment="Object ID SoftKey" InitialValue="ID_NULL"/>
+		</InputVars>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="Button" Type="isobus::UT::io::Button::Button_IE" x="0" y="0">
+			<Parameter Name="QI" Value="TRUE"/>
+			<Parameter Name="InputEvent" Value="BT_RELEASED_UNLATCHED"/>
+		</FB>
+		<FB Name="SoftKey" Type="isobus::UT::io::Softkey::Softkey_IE" x="0" y="1100">
+			<Parameter Name="QI" Value="TRUE"/>
+			<Parameter Name="InputEvent" Value="SK_RELEASED"/>
+		</FB>
+		<EventConnections>
+			<Connection Source="Button.IND" Destination="IND" dx1="1566.67"/>
+			<Connection Source="SoftKey.IND" Destination="IND" dx1="1626.67"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="u16ObjId_BT" Destination="Button.u16ObjId" dx1="1226.67"/>
+			<Connection Source="u16ObjId_SK" Destination="SoftKey.u16ObjId" dx1="800"/>
+		</DataConnections>
+	</SubAppNetwork>
+</SubAppType>
