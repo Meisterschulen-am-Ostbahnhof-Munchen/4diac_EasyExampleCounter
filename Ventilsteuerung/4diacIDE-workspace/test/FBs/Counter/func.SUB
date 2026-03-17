@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SubAppType Name="func" Comment="Subapplication Type" >
+<SubAppType Name="func" Comment="Subapplication Type">
 	<Identification Standard="61499-2">
 	</Identification>
 	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
 	</VersionInfo>
+	<CompilerInfo>
+		<Import declaration="DefaultPool::Button_Reset_Gesamtzaehler"/>
+		<Import declaration="DefaultPool::Button_Reset_Tageszaehler"/>
+		<Import declaration="DefaultPool::NumberVariable_Gesamtzaehler"/>
+		<Import declaration="DefaultPool::NumberVariable_Gesamtziel"/>
+		<Import declaration="DefaultPool::NumberVariable_Tageszaehler"/>
+		<Import declaration="DefaultPool::NumberVariable_Tagesziel"/>
+		<Import declaration="DefaultPool::ObjectPointer_Gesamtziel"/>
+		<Import declaration="DefaultPool::ObjectPointer_Tagesziel"/>
+		<Import declaration="DefaultPool::SoftKey_Reset_Gesamtzaehler"/>
+		<Import declaration="DefaultPool::SoftKey_Reset_Tageszaehler"/>
+		<Import declaration="NVS_Keys::KEY_GESAMTZAEHLER"/>
+		<Import declaration="NVS_Keys::KEY_GESAMTZIEL"/>
+		<Import declaration="NVS_Keys::KEY_TAGESZAEHLER"/>
+		<Import declaration="NVS_Keys::KEY_TAGESZIEL"/>
+	</CompilerInfo>
 	<SubAppInterfaceList>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<SubApp Name="VT_active" Type="VT_active" x="266.67" y="-400">
+		<SubApp Name="VT_active" Type="VT_active" x="100" y="-200">
 			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
 			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
 		</SubApp>
@@ -16,26 +32,30 @@
 		<SubApp Name="PlusPlus" Type="Tuple" x="0" y="-1866.67">
 		</SubApp>
 		<SubApp Name="Reset_Gesamtzaehler" Type="Reset" x="0" y="-933.33">
+			<Parameter Name="u16ObjId_BT" Value="Button_Reset_Gesamtzaehler"/>
+			<Parameter Name="u16ObjId_SK" Value="SoftKey_Reset_Gesamtzaehler"/>
 		</SubApp>
 		<SubApp Name="Reset_Tageszaehler" Type="Reset" x="0" y="620">
+			<Parameter Name="u16ObjId_BT" Value="Button_Reset_Tageszaehler"/>
+			<Parameter Name="u16ObjId_SK" Value="SoftKey_Reset_Tageszaehler"/>
 		</SubApp>
 		<SubApp Name="Gesamtzaehler" Type="Zaehler" x="4000" y="-2000">
-			<Parameter Name="KEY" Value="NVS_Keys::KEY_GESAMTZAEHLER"/>
-			<Parameter Name="u16ObjId" Value="DefaultPool::NumberVariable_Gesamtzaehler"/>
+			<Parameter Name="KEY" Value="KEY_GESAMTZAEHLER"/>
+			<Parameter Name="u16ObjId" Value="NumberVariable_Gesamtzaehler"/>
 		</SubApp>
 		<SubApp Name="Tageszaehler" Type="Zaehler" x="4000" y="0">
-			<Parameter Name="KEY" Value="NVS_Keys::KEY_TAGESZAEHLER"/>
-			<Parameter Name="u16ObjId" Value="DefaultPool::NumberVariable_Tageszaehler"/>
+			<Parameter Name="KEY" Value="KEY_TAGESZAEHLER"/>
+			<Parameter Name="u16ObjId" Value="NumberVariable_Tageszaehler"/>
 		</SubApp>
 		<SubApp Name="TageszaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-266.67">
-			<Parameter Name="KEY" Value="NVS_Keys::KEY_TAGESZIEL"/>
-			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Tagesziel"/>
-			<Parameter Name="u16ObjId_Pointer" Value="DefaultPool::ObjectPointer_Tagesziel"/>
+			<Parameter Name="KEY" Value="KEY_TAGESZIEL"/>
+			<Parameter Name="u16ObjId_Ziel" Value="NumberVariable_Tagesziel"/>
+			<Parameter Name="u16ObjId_Pointer" Value="ObjectPointer_Tagesziel"/>
 		</SubApp>
 		<SubApp Name="GesamtzaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-2266.67">
-			<Parameter Name="KEY" Value="NVS_Keys::KEY_GESAMTZIEL"/>
-			<Parameter Name="u16ObjId_Ziel" Value="DefaultPool::NumberVariable_Gesamtziel"/>
-			<Parameter Name="u16ObjId_Pointer" Value="DefaultPool::ObjectPointer_Gesamtziel"/>
+			<Parameter Name="KEY" Value="KEY_GESAMTZIEL"/>
+			<Parameter Name="u16ObjId_Ziel" Value="NumberVariable_Gesamtziel"/>
+			<Parameter Name="u16ObjId_Pointer" Value="ObjectPointer_Gesamtziel"/>
 		</SubApp>
 		<EventConnections>
 			<Connection Source="PlusPlus.IND" Destination="Gesamtzaehler.CU" dx1="1740"/>
