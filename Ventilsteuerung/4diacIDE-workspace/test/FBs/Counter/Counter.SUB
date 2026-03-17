@@ -8,6 +8,7 @@
 		<Import declaration="DefaultPool::AuxFunction2_MinusMinus"/>
 		<Import declaration="DefaultPool::AuxFunction2_PlusPlus"/>
 		<Import declaration="DefaultPool::Button_MinusMinus"/>
+		<Import declaration="DefaultPool::Button_NextVT"/>
 		<Import declaration="DefaultPool::Button_PlusPlus"/>
 		<Import declaration="DefaultPool::Button_Reset_Gesamtzaehler"/>
 		<Import declaration="DefaultPool::Button_Reset_Tageszaehler"/>
@@ -25,6 +26,7 @@
 		<Import declaration="NVS_Keys::KEY_GESAMTZIEL"/>
 		<Import declaration="NVS_Keys::KEY_TAGESZAEHLER"/>
 		<Import declaration="NVS_Keys::KEY_TAGESZIEL"/>
+		<Import declaration="isobus::UT::io::Button::ButtonActivationCode::BT_RELEASED_UNLATCHED"/>
 	</CompilerInfo>
 	<SubAppInterfaceList>
 	</SubAppInterfaceList>
@@ -68,6 +70,11 @@
 		<FB Name="NextVT" Type="isobus::UT::util::NextVT" x="2100" y="1400">
 			<Parameter Name="QI" Value="TRUE"/>
 		</FB>
+		<FB Name="Button" Type="isobus::UT::io::Button::Button_IE" x="-300" y="1300">
+			<Parameter Name="QI" Value="TRUE"/>
+			<Parameter Name="u16ObjId" Value="Button_NextVT"/>
+			<Parameter Name="InputEvent" Value="BT_RELEASED_UNLATCHED"/>
+		</FB>
 		<EventConnections>
 			<Connection Source="PlusPlus.IND" Destination="Gesamtzaehler.CU"/>
 			<Connection Source="MinusMinus.IND" Destination="Gesamtzaehler.CD" dx1="1740"/>
@@ -77,6 +84,7 @@
 			<Connection Source="Reset_Tageszaehler.IND" Destination="Tageszaehler.R" dx1="1326.67"/>
 			<Connection Source="Tageszaehler.CNF" Destination="TageszaehlerVergleich.REQ"/>
 			<Connection Source="Gesamtzaehler.CNF" Destination="GesamtzaehlerVergleich.REQ"/>
+			<Connection Source="Button.IND" Destination="NextVT.REQ" dx1="753.33"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="Tageszaehler.CV" Destination="TageszaehlerVergleich.CV" dx1="506.67"/>
