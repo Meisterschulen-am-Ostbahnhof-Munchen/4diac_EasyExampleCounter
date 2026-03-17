@@ -20,8 +20,10 @@
         <VarDeclaration Name="Button_Reset_Gesamtzaehler" Type="UINT" Comment="" InitialValue="6001"/>
         <VarDeclaration Name="Button_Reset_Tageszaehler" Type="UINT" Comment="" InitialValue="6002"/>
         <VarDeclaration Name="Button_MinusMinus" Type="UINT" Comment="" InitialValue="6003"/>
+        <VarDeclaration Name="Button_NextVT" Type="UINT" Comment="" InitialValue="6004"/>
         <VarDeclaration Name="InputNumber_Gesamtziel" Type="UINT" Comment="" InitialValue="9000"/>
         <VarDeclaration Name="InputNumber_Tagesziel" Type="UINT" Comment="" InitialValue="9001"/>
+        <VarDeclaration Name="OutputString_NextVT" Type="UINT" Comment="" InitialValue="11000"/>
         <VarDeclaration Name="OutputString_Fasszaehler" Type="UINT" Comment="" InitialValue="11001"/>
         <VarDeclaration Name="OutputString_Reset_Gesamtzaehler" Type="UINT" Comment="" InitialValue="11002"/>
         <VarDeclaration Name="OutputString_Gesamtzaehler" Type="UINT" Comment="" InitialValue="11003"/>

@@ -1,4 +1,4 @@
-// ISO-Designer ISO 11783   Version 5.7.0.6283 Bucher Automation AG
+// ISO-Designer ISO 11783   Version 5.7.2.6664 Bucher Automation AG
 // Do not change!
 
 #include "DefaultPool.iop.h"
@@ -21,7 +21,7 @@ const unsigned char ISO_OP_MEMORY_CLASS isoOP_DefaultPool[] = {
 		XYREF(OutputString_Fasszaehler, 0, 20),
 		'e', 'n',
 		'd', 'e',
-	ID(DataMask_Home), TYPEID_DATAMASK, COLOR(230), ID(SoftKeyMask_Home), 7, 0, 
+	ID(DataMask_Home), TYPEID_DATAMASK, COLOR(230), ID(SoftKeyMask_Home), 8, 0, 
 		XYREF(Meter_Gesamtzaehler, 400, 240),
 		XYREF(Meter_Tageszaehler, 400, 240),
 		XYREF(Button_MinusMinus, 400, 320),
@@ -29,6 +29,7 @@ const unsigned char ISO_OP_MEMORY_CLASS isoOP_DefaultPool[] = {
 		XYREF(Container_Gesamtzaehler, 5, 5),
 		XYREF(Container_Tageszaehler, 202, 5),
 		XYREF(OutputString_ZielErreicht, 500, 150),
+		XYREF(Button_NextVT, 398, 6),
 	ID(Container_Gesamtzaehler), TYPEID_CONTAINER, WORD(192), WORD(470), 0, 8, 0, 
 		XYREF(Rectangle_Box, 0, 0),
 		XYREF(OutputString_Gesamtzaehler, 5, 5),
@@ -76,10 +77,14 @@ const unsigned char ISO_OP_MEMORY_CLASS isoOP_DefaultPool[] = {
 		XYREF(OutputString_Reset_Tageszaehler, 0, 0),
 	ID(Button_MinusMinus), TYPEID_BUTTON, WORD(80), WORD(80), 187, 144, 1, 0, 1, 0, 
 		XYREF(Icon_Button_MinusMinus, 0, 0),
+	ID(Button_NextVT), TYPEID_BUTTON, WORD(80), WORD(80), 187, 144, 1, 0, 1, 0, 
+		XYREF(OutputString_NextVT, 0, 0),
 	ID(InputNumber_Gesamtziel), TYPEID_INNUM, WORD(120), WORD(55), COLOR_WHITE, ID(FontAttributes_Default), 0, 
 		ID(NumberVariable_Gesamtziel), LONG(123UL), LONG(0UL), LONG(65535UL), LONG(0L), FLOAT_1, 0, 0, 2, 1, 0, 
 	ID(InputNumber_Tagesziel), TYPEID_INNUM, WORD(120), WORD(55), COLOR_WHITE, ID(FontAttributes_Default), 0, 
 		ID(NumberVariable_Tagesziel), LONG(123UL), LONG(0UL), LONG(65535UL), LONG(0L), FLOAT_1, 0, 0, 2, 1, 0, 
+	ID(OutputString_NextVT), TYPEID_OUTSTR, WORD(70), WORD(72), COLOR_WHITE, ID(FontAttributes_Default), 3,
+		ID(ID_NULL), 5, WORD(7), 'N', 'e', 'x', 't', ' ', 'V', 'T', 0,
 	ID(OutputString_Fasszaehler), TYPEID_OUTSTR, WORD(80), WORD(40), COLOR_WHITE, ID(FontAttributes_Button), 3,
 		ID(ID_NULL), 1, WORD(12), 'F', 'a', 's', 's', '\r', '\n',
 		'Z', 'ä', 'h', 'l', 'e', 'r', 0,

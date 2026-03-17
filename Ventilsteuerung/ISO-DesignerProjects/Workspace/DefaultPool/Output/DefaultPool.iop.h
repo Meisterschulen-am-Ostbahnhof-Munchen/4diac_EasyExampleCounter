@@ -1,4 +1,4 @@
-// ISO-Designer ISO 11783   Version 5.7.0.6283 Bucher Automation AG
+// ISO-Designer ISO 11783   Version 5.7.2.6664 Bucher Automation AG
 // Do not change!
 #define ISO_DESIGNATOR_WIDTH                 80
 #define ISO_DESIGNATOR_HEIGHT                80
@@ -19,8 +19,10 @@
 #define Button_Reset_Gesamtzaehler         6001
 #define Button_Reset_Tageszaehler          6002
 #define Button_MinusMinus                  6003
+#define Button_NextVT                      6004
 #define InputNumber_Gesamtziel             9000
 #define InputNumber_Tagesziel              9001
+#define OutputString_NextVT               11000
 #define OutputString_Fasszaehler          11001
 #define OutputString_Reset_Gesamtzaehler  11002
 #define OutputString_Gesamtzaehler        11003
