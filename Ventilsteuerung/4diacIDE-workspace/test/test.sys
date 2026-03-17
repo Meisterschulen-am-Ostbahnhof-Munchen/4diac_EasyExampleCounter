@@ -4,29 +4,31 @@
 	</Identification>
 	<VersionInfo Organization="HR Agrartechnik GmbH" Version="1.0" Author="Franz Höpfinger" Date="2023-10-23">
 	</VersionInfo>
+	<CompilerInfo packageName="Training">
+		<Import declaration="logiBUS::stations::Computers::C_ST"/>
+	</CompilerInfo>
 	<Application Name="App" Comment="Default App for Everything">
 		<SubAppNetwork>
 			<SubApp Name="Counter" Type="Counter" x="1100" y="-500">
 			</SubApp>
 		</SubAppNetwork>
 	</Application>
-	<Device Name="FORTE_PC" Type="iec61499::hardware::FORTE_PC" x="1800" y="1800">
-		<Parameter Name="MGR_ID" Value="Computers::C_00" Comment="Device manager socket ID"/>
+	<Device Name="FORTE_PC" Type="iec61499::system::FORTE_PC" x="1800" y="1800">
+		<Parameter Name="MGR_ID" Value="C_ST" Comment="Device manager socket ID"/>
 		<Attribute Name="Profile" Type="STRING" Value="HOLOBLOC"/>
 		<Attribute Name="Color" Type="STRING" Value="255,190,111"/>
-		<Resource Name="EMB_RES" Type="iec61499::hardware::EMB_RES" x="0" y="0">
+		<Resource Name="EMB_RES" Type="iec61499::system::EMB_RES" x="0" y="0">
 			<FBNetwork>
 				<FB Name="E_TRIG" Type="iec61499::events::E_TRIG" x="2000" y="500">
 					<Parameter Name="EVENTTYPE" Value="'EInit'"/>
 				</FB>
 				<EventConnections>
-					<Connection Source="START.COLD" Destination="E_TRIG.REQ" dx1="546.67"/>
-					<Connection Source="START.WARM" Destination="E_TRIG.REQ" dx1="500"/>
+					<Connection Source="START.COLD" Destination="E_TRIG.REQ" dx1="746.67"/>
 				</EventConnections>
 			</FBNetwork>
 		</Resource>
 	</Device>
-	<Segment Name="Ethernet" Type="iec61499::hardware::Ethernet" x="3120" y="1200" dx1="2000">
+	<Segment Name="Ethernet" Type="iec61499::system::Ethernet" x="3120" y="1200" dx1="2000">
 		<Attribute Name="Color" Type="STRING" Value="200,32,38"/>
 	</Segment>
 	<Mapping From="App.Counter" To="FORTE_PC.EMB_RES"/>
