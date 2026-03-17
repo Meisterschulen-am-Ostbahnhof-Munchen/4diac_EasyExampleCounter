@@ -14,8 +14,6 @@
 			</SubAppEvent>
 			<SubAppEvent Name="R" Type="Event" Comment="Reset">
 			</SubAppEvent>
-			<SubAppEvent Name="rVT" Type="Event" Comment="refresh VT">
-			</SubAppEvent>
 		</SubAppEventInputs>
 		<SubAppEventOutputs>
 			<SubAppEvent Name="CNF" Type="Event" Comment="Confirmation -- Counter Value was changed">
@@ -43,8 +41,6 @@
 		<EventConnections>
 			<Connection Source="CU" Destination="E_CTUD_UDINT.CU" dx1="1620"/>
 			<Connection Source="R" Destination="E_CTUD_UDINT.R" dx1="1246.67"/>
-			<Connection Source="rVT" Destination="Q_NumericValue.REQ" dx1="6073.33"/>
-			<Connection Source="rVT" Destination="CNF" dx1="1993.33"/>
 			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" dx1="273.33" dx2="273.33" dy="-193.33"/>
 			<Connection Source="E_CTUD_UDINT.RO" Destination="E_MERGE_3.EI2"/>
 			<Connection Source="E_MERGE_3.EO" Destination="NVS_UDINT.SET" dx1="1240"/>
