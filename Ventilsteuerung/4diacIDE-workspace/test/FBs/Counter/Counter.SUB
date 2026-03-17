@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SubAppType Name="func" Comment="Subapplication Type">
+<SubAppType Name="Counter" Comment="Subapplication Type">
 	<Identification Standard="61499-2">
 	</Identification>
 	<VersionInfo Version="1.0" Author="Franz" Date="2023-02-17">
 	</VersionInfo>
 	<CompilerInfo>
+		<Import declaration="DefaultPool::AuxFunction2_MinusMinus"/>
+		<Import declaration="DefaultPool::AuxFunction2_PlusPlus"/>
+		<Import declaration="DefaultPool::Button_MinusMinus"/>
+		<Import declaration="DefaultPool::Button_PlusPlus"/>
 		<Import declaration="DefaultPool::Button_Reset_Gesamtzaehler"/>
 		<Import declaration="DefaultPool::Button_Reset_Tageszaehler"/>
 		<Import declaration="DefaultPool::NumberVariable_Gesamtzaehler"/>
@@ -13,6 +17,8 @@
 		<Import declaration="DefaultPool::NumberVariable_Tagesziel"/>
 		<Import declaration="DefaultPool::ObjectPointer_Gesamtziel"/>
 		<Import declaration="DefaultPool::ObjectPointer_Tagesziel"/>
+		<Import declaration="DefaultPool::SoftKey_MinusMinus"/>
+		<Import declaration="DefaultPool::SoftKey_PlusPlus"/>
 		<Import declaration="DefaultPool::SoftKey_Reset_Gesamtzaehler"/>
 		<Import declaration="DefaultPool::SoftKey_Reset_Tageszaehler"/>
 		<Import declaration="NVS_Keys::KEY_GESAMTZAEHLER"/>
@@ -23,36 +29,42 @@
 	<SubAppInterfaceList>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<SubApp Name="VT_active" Type="VT_active" x="100" y="-200">
+		<SubApp Name="VT_active" Type="FBs::Counter::subs::page::VT_active" x="100" y="-200">
 			<Attribute Name="width" Type="LREAL" Value="1333.3333333333335"/>
 			<Attribute Name="height" Type="LREAL" Value="666.6666666666667"/>
 		</SubApp>
-		<SubApp Name="MinusMinus" Type="Tuple" x="0" y="-1466.67">
+		<SubApp Name="MinusMinus" Type="FBs::Counter::subs::Buttons::Tuple" x="-500" y="-1700">
+			<Parameter Name="u16ObjId_BT" Value="Button_MinusMinus"/>
+			<Parameter Name="u16ObjId_SK" Value="SoftKey_MinusMinus"/>
+			<Parameter Name="u16ObjId_AUX" Value="AuxFunction2_MinusMinus"/>
 		</SubApp>
-		<SubApp Name="PlusPlus" Type="Tuple" x="0" y="-1866.67">
+		<SubApp Name="PlusPlus" Type="FBs::Counter::subs::Buttons::Tuple" x="-500" y="-2400">
+			<Parameter Name="u16ObjId_BT" Value="Button_PlusPlus"/>
+			<Parameter Name="u16ObjId_SK" Value="SoftKey_PlusPlus"/>
+			<Parameter Name="u16ObjId_AUX" Value="AuxFunction2_PlusPlus"/>
 		</SubApp>
-		<SubApp Name="Reset_Gesamtzaehler" Type="Reset" x="0" y="-933.33">
+		<SubApp Name="Reset_Gesamtzaehler" Type="FBs::Counter::subs::Buttons::Reset" x="0" y="-933.33">
 			<Parameter Name="u16ObjId_BT" Value="Button_Reset_Gesamtzaehler"/>
 			<Parameter Name="u16ObjId_SK" Value="SoftKey_Reset_Gesamtzaehler"/>
 		</SubApp>
-		<SubApp Name="Reset_Tageszaehler" Type="Reset" x="0" y="620">
+		<SubApp Name="Reset_Tageszaehler" Type="FBs::Counter::subs::Buttons::Reset" x="0" y="620">
 			<Parameter Name="u16ObjId_BT" Value="Button_Reset_Tageszaehler"/>
 			<Parameter Name="u16ObjId_SK" Value="SoftKey_Reset_Tageszaehler"/>
 		</SubApp>
-		<SubApp Name="Gesamtzaehler" Type="Zaehler" x="4000" y="-2000">
+		<SubApp Name="Gesamtzaehler" Type="FBs::Counter::subs::Zaehler::Zaehler" x="4000" y="-2000">
 			<Parameter Name="KEY" Value="KEY_GESAMTZAEHLER"/>
 			<Parameter Name="u16ObjId" Value="NumberVariable_Gesamtzaehler"/>
 		</SubApp>
-		<SubApp Name="Tageszaehler" Type="Zaehler" x="4000" y="0">
+		<SubApp Name="Tageszaehler" Type="FBs::Counter::subs::Zaehler::Zaehler" x="4000" y="0">
 			<Parameter Name="KEY" Value="KEY_TAGESZAEHLER"/>
 			<Parameter Name="u16ObjId" Value="NumberVariable_Tageszaehler"/>
 		</SubApp>
-		<SubApp Name="TageszaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-266.67">
+		<SubApp Name="TageszaehlerVergleich" Type="FBs::Counter::subs::Zaehler::ZaehlerVergleich" x="7066.67" y="-266.67">
 			<Parameter Name="KEY" Value="KEY_TAGESZIEL"/>
 			<Parameter Name="u16ObjId_Ziel" Value="NumberVariable_Tagesziel"/>
 			<Parameter Name="u16ObjId_Pointer" Value="ObjectPointer_Tagesziel"/>
 		</SubApp>
-		<SubApp Name="GesamtzaehlerVergleich" Type="ZaehlerVergleich" x="7066.67" y="-2266.67">
+		<SubApp Name="GesamtzaehlerVergleich" Type="FBs::Counter::subs::Zaehler::ZaehlerVergleich" x="7066.67" y="-2266.67">
 			<Parameter Name="KEY" Value="KEY_GESAMTZIEL"/>
 			<Parameter Name="u16ObjId_Ziel" Value="NumberVariable_Gesamtziel"/>
 			<Parameter Name="u16ObjId_Pointer" Value="ObjectPointer_Gesamtziel"/>

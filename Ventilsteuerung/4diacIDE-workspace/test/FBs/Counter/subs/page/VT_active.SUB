@@ -4,6 +4,8 @@
 	</Identification>
 	<VersionInfo Version="1.0" Author="franz" Date="2023-02-19">
 	</VersionInfo>
+	<CompilerInfo packageName="FBs::Counter::subs::page">
+	</CompilerInfo>
 	<SubAppInterfaceList>
 		<SubAppEventOutputs>
 			<SubAppEvent Name="EO" Type="Event">
@@ -13,7 +15,7 @@
 	<SubAppNetwork>
 		<FB Name="E_D_FF" Type="iec61499::events::E_D_FF" x="2266.67" y="133.33">
 		</FB>
-		<FB Name="CbVtStatus" Type="CbVtStatus" x="0" y="-133.33">
+		<FB Name="CbVtStatus" Type="isobus::UT::status::CbVtStatus" x="0" y="-133.33">
 		</FB>
 		<EventConnections>
 			<Connection Source="E_D_FF.EO" Destination="EO" dx1="980"/>
