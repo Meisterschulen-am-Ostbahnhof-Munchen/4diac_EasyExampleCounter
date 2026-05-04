@@ -4,7 +4,7 @@
 #include "DefaultPool.c.h"
 
 const unsigned long ISO_OP_MEMORY_CLASS isoOP_DefaultPool_Offset[] = {
-	     1,  // WorkingSet_0_Offset
+	     1,  // WorkingSet_Offset
 	    21,  // DataMask_Home_Offset
 	    77,  // Container_Gesamtzaehler_Offset
 	   135,  // Container_Tageszaehler_Offset
