@@ -31,6 +31,8 @@
 		</FB>
 		<FB Name="AUDI_SPLIT_3" Type="adapter::events::unidirectional::AUDI_SPLIT_3" x="1900" y="1400">
 		</FB>
+		<SubApp Name="LD_helper" Type="FBs::Counter::subs::Zaehler::LD_helper" x="-1800" y="1800">
+		</SubApp>
 		<DataConnections>
 			<Connection Source="u16ObjId" Destination="Q_NumericValue.u16ObjId" dx1="2840">
 				<Attribute Name="Visible" Value="false"/>
@@ -41,13 +43,15 @@
 		</DataConnections>
 		<AdapterConnections>
 			<Connection Source="AUDI_FB_CTUD.CV" Destination="AUDI_SPLIT_3.IN" dx1="193.33"/>
-			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="AUDI_FB_CTUD.PV" dx1="640" dx2="1186.67" dy="413.33"/>
 			<Connection Source="AUDI_SPLIT_3.OUT1" Destination="CV" dx1="886.67"/>
 			<Connection Source="AUDI_SPLIT_3.OUT2" Destination="Q_NumericValue.u32NewValue" dx1="1373.33"/>
 			<Connection Source="AUDI_SPLIT_3.OUT3" Destination="NVS_AUDI.AUDI_IN" dx1="693.33"/>
 			<Connection Source="CU" Destination="AUDI_FB_CTUD.CU" dx1="840"/>
 			<Connection Source="CD" Destination="AUDI_FB_CTUD.CD" dx1="700"/>
 			<Connection Source="R" Destination="AUDI_FB_CTUD.R" dx1="586.67"/>
+			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="LD_helper.IN" dx1="633.33" dx2="80" dy="433.33"/>
+			<Connection Source="LD_helper.OUT" Destination="AUDI_FB_CTUD.PV" dx1="886.67"/>
+			<Connection Source="LD_helper.Q" Destination="AUDI_FB_CTUD.LD" dx1="726.67"/>
 		</AdapterConnections>
 	</SubAppNetwork>
 </SubAppType>
