@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalConstants Name="DefaultPool" Comment="Global constants">
+    <CompilerInfo packageName="FBs::Counter::const"/>
+    <GlobalConstants>
+        <VarDeclaration Name="ISO_DESIGNATOR_WIDTH" Type="UINT" InitialValue="80"/>
+        <VarDeclaration Name="ISO_DESIGNATOR_HEIGHT" Type="UINT" InitialValue="80"/>
+        <VarDeclaration Name="ISO_MASK_SIZE" Type="UINT" InitialValue="480"/>
+        <VarDeclaration Name="ISO_VERSION_LABEL" Type="STRING" InitialValue=""/>
+        <VarDeclaration Name="MASK_WIDTH" Type="UINT" InitialValue="480"/>
+        <VarDeclaration Name="MASK_HEIGHT" Type="UINT" InitialValue="480"/>
+        <VarDeclaration Name="WorkingSet" Type="UINT" InitialValue="0"/>
+        <VarDeclaration Name="DataMask_Home" Type="UINT" InitialValue="1000"/>
+        <VarDeclaration Name="Container_Gesamtzaehler" Type="UINT" InitialValue="3000"/>
+        <VarDeclaration Name="Container_Tageszaehler" Type="UINT" InitialValue="3001"/>
+        <VarDeclaration Name="SoftKeyMask_Home" Type="UINT" InitialValue="4000"/>
+        <VarDeclaration Name="SoftKey_PlusPlus" Type="UINT" InitialValue="5000"/>
+        <VarDeclaration Name="SoftKey_Reset_Gesamtzaehler" Type="UINT" InitialValue="5001"/>
+        <VarDeclaration Name="SoftKey_Reset_Tageszaehler" Type="UINT" InitialValue="5002"/>
+        <VarDeclaration Name="SoftKey_MinusMinus" Type="UINT" InitialValue="5003"/>
+        <VarDeclaration Name="Button_PlusPlus" Type="UINT" InitialValue="6000"/>
+        <VarDeclaration Name="Button_Reset_Gesamtzaehler" Type="UINT" InitialValue="6001"/>
+        <VarDeclaration Name="Button_Reset_Tageszaehler" Type="UINT" InitialValue="6002"/>
+        <VarDeclaration Name="Button_MinusMinus" Type="UINT" InitialValue="6003"/>
+        <VarDeclaration Name="Button_NextVT" Type="UINT" InitialValue="6004"/>
+        <VarDeclaration Name="InputNumber_Gesamtziel" Type="UINT" InitialValue="9000"/>
+        <VarDeclaration Name="InputNumber_Tagesziel" Type="UINT" InitialValue="9001"/>
+        <VarDeclaration Name="OutputString_NextVT" Type="UINT" InitialValue="11000"/>
+        <VarDeclaration Name="OutputString_Fasszaehler" Type="UINT" InitialValue="11001"/>
+        <VarDeclaration Name="OutputString_Reset_Gesamtzaehler" Type="UINT" InitialValue="11002"/>
+        <VarDeclaration Name="OutputString_Gesamtzaehler" Type="UINT" InitialValue="11003"/>
+        <VarDeclaration Name="OutputString_Tageszaehler" Type="UINT" InitialValue="11004"/>
+        <VarDeclaration Name="OutputString_Reset_Tageszaehler" Type="UINT" InitialValue="11005"/>
+        <VarDeclaration Name="OutputString_SoftKey_Reset_Gesamtzaehler" Type="UINT" InitialValue="11009"/>
+        <VarDeclaration Name="OutputString_SoftKey_Reset_Tageszaehler" Type="UINT" InitialValue="11010"/>
+        <VarDeclaration Name="OutputString_Ziel" Type="UINT" InitialValue="11011"/>
+        <VarDeclaration Name="OutputString_ZielErreicht" Type="UINT" InitialValue="11012"/>
+        <VarDeclaration Name="OutputNumber_Tageszaehler" Type="UINT" InitialValue="12000"/>
+        <VarDeclaration Name="OutputNumber_Gesamtzaehler" Type="UINT" InitialValue="12003"/>
+        <VarDeclaration Name="Rectangle_Box" Type="UINT" InitialValue="14000"/>
+        <VarDeclaration Name="Meter_Gesamtzaehler" Type="UINT" InitialValue="17000"/>
+        <VarDeclaration Name="Meter_Tageszaehler" Type="UINT" InitialValue="17001"/>
+        <VarDeclaration Name="LinearBargraph_Gesamtzaehler" Type="UINT" InitialValue="18000"/>
+        <VarDeclaration Name="LinearBargraph_Tageszaehler" Type="UINT" InitialValue="18001"/>
+        <VarDeclaration Name="Icon_Button_MinusMinus" Type="UINT" InitialValue="20000"/>
+        <VarDeclaration Name="Icon_Button_PlusPlus" Type="UINT" InitialValue="20001"/>
+        <VarDeclaration Name="Icon_SoftKey_MinusMinus" Type="UINT" InitialValue="20002"/>
+        <VarDeclaration Name="IconSoftKey_PlusPlus" Type="UINT" InitialValue="20003"/>
+        <VarDeclaration Name="NumberVariable_Tageszaehler" Type="UINT" InitialValue="21000"/>
+        <VarDeclaration Name="NumberVariable_Gesamtzaehler" Type="UINT" InitialValue="21001"/>
+        <VarDeclaration Name="NumberVariable_Gesamtziel" Type="UINT" InitialValue="21002"/>
+        <VarDeclaration Name="NumberVariable_Tagesziel" Type="UINT" InitialValue="21003"/>
+        <VarDeclaration Name="FontAttributes_Default" Type="UINT" InitialValue="23001"/>
+        <VarDeclaration Name="FontAttributes_Button" Type="UINT" InitialValue="23002"/>
+        <VarDeclaration Name="LineAttributes_Border" Type="UINT" InitialValue="24000"/>
+        <VarDeclaration Name="FillAttributes_DarkerBG" Type="UINT" InitialValue="25000"/>
+        <VarDeclaration Name="ObjectPointer_Null2" Type="UINT" InitialValue="27000"/>
+        <VarDeclaration Name="ObjectPointer_Tagesziel" Type="UINT" InitialValue="27001"/>
+        <VarDeclaration Name="ObjectPointer_Gesamtziel" Type="UINT" InitialValue="27003"/>
+        <VarDeclaration Name="AuxFunction2_PlusPlus" Type="UINT" InitialValue="31000"/>
+        <VarDeclaration Name="AuxFunction2_MinusMinus" Type="UINT" InitialValue="31001"/>
+    </GlobalConstants>
+</GlobalConstants>
