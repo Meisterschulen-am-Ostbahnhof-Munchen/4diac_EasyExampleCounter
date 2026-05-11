@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<AdapterType Name="AR2IO" Comment="bidirectional Adapter Interface for 1 Event and 1 Real">
+<AdapterType Name="ATM" Comment="unidirectional Adapter Interface for 1 Event and 1 TIME">
 	<Identification Standard="61499-1" Description="Copyright (c) 2026 HR Agrartechnik GmbH  &#10; &#10;This program and the accompanying materials are made  &#10;available under the terms of the Eclipse Public License 2.0  &#10;which is available at https://www.eclipse.org/legal/epl-2.0/  &#10; &#10;SPDX-License-Identifier: EPL-2.0">
 	</Identification>
 	<VersionInfo Organization="HR Agrartechnik GmbH" Version="1.0" Author="Franz Höpfinger" Date="2026-01-17" Remarks="Initial Version">
 	</VersionInfo>
-	<CompilerInfo packageName="adapter::types::bidirectional">
+	<CompilerInfo packageName="adapter::types::unidirectional">
 		<Import declaration="eclipse4diac::core::TypeHash"/>
 	</CompilerInfo>
 	<InterfaceList>
-		<EventInputs>
-			<Event Name="EI1" Type="Event" Comment="Request (or Indication)">
-				<With Var="D1"/>
-			</Event>
-		</EventInputs>
 		<EventOutputs>
-			<Event Name="EO1" Type="Event" Comment="Indication (or Request)">
+			<Event Name="E1" Type="Event" Comment="Indication (or Request)">
 				<With Var="D1"/>
 			</Event>
 		</EventOutputs>
-		<InOutVars>
-			<VarDeclaration Name="D1" Type="REAL" Comment="InOut Value"/>
-		</InOutVars>
+		<OutputVars>
+			<VarDeclaration Name="D1" Type="TIME" Comment="Indication (or Request) Data from Plug"/>
+		</OutputVars>
 	</InterfaceList>
 	<Attribute Name="eclipse4diac::core::TypeHash" Value="''"/>
 </AdapterType>

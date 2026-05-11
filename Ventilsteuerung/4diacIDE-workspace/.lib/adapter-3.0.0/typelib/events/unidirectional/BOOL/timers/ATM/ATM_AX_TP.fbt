@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FBType Name="AX_TP" Comment="Standard timer function block (pulse) - non-retriggerable">
-	<Identification Standard="61499-2" Classification="standard timer function block" Description="Copyright (c) 2024 HR Agrartechnik GmbH  &#10; &#10;This program and the accompanying materials are made  &#10;available under the terms of the Eclipse Public License 2.0  &#10;which is available at https://www.eclipse.org/legal/epl-2.0/  &#10; &#10;SPDX-License-Identifier: EPL-2.0  &#10;   &#10;   &#10;AX_TP -- Impulse forming FB with AX adapter interface  &#10;&#10;The adapter input IN triggers execution (E1-&gt;REQ) and provides  &#10;the boolean input value (D1-&gt;IN). The event input R presets  &#10;the pulse time PT and resets the timer.  &#10;Generate an Impulse with a given Time.  &#10;This FB makes an Impulse of Duration PT on the Output Q on rising edge of IN.  &#10;Non-retriggerable.">
+<FBType Name="ATM_AX_TP" Comment="Standard timer function block (pulse) - non-retriggerable">
+	<Identification Standard="61499-2" Classification="standard timer function block" Description="Copyright (c) 2024 HR Agrartechnik GmbH  &#10; &#10;This program and the accompanying materials are made  &#10;available under the terms of the Eclipse Public License 2.0  &#10;which is available at https://www.eclipse.org/legal/epl-2.0/  &#10; &#10;SPDX-License-Identifier: EPL-2.0  &#10;   &#10;   &#10;AT_AX_TP -- Impulse forming FB with AX/AT adapter interface  &#10;&#10;The adapter input IN triggers execution (E1-&gt;REQ) and provides  &#10;the boolean input value (D1-&gt;IN). The adapter input PT provides  &#10;the pulse time (D1-&gt;PT). The event input R resets the timer.  &#10;Generate an Impulse with a given Time.  &#10;This FB makes an Impulse of Duration PT on the Output Q on rising edge of IN.  &#10;Non-retriggerable.">
 	</Identification>
 	<VersionInfo Version="3.0" Author="Patrick Aigner" Date="2025-04-14" Remarks="changed package">
 	</VersionInfo>
@@ -14,17 +14,14 @@
 	<InterfaceList>
 		<EventInputs>
 			<Event Name="R" Type="Event" Comment="Reset">
-				<With Var="PT"/>
 			</Event>
 		</EventInputs>
-		<InputVars>
-			<VarDeclaration Name="PT" Type="TIME" Comment="Pulse time"/>
-		</InputVars>
 		<Plugs>
 			<AdapterDeclaration Name="Q" Type="adapter::types::unidirectional::AX" Comment="Timer output (AX adapter)" x="-1500" y="-900"/>
 		</Plugs>
 		<Sockets>
 			<AdapterDeclaration Name="IN" Type="adapter::types::unidirectional::AX" Comment="Timer input (AX adapter)" x="-3800" y="-900"/>
+			<AdapterDeclaration Name="PT" Type="adapter::types::unidirectional::ATM" Comment="Pulse time (AT adapter)" x="-4000" y="-300"/>
 		</Sockets>
 	</InterfaceList>
 	<FBNetwork>
@@ -32,12 +29,12 @@
 		</FB>
 		<EventConnections>
 			<Connection Source="IN.E1" Destination="E_TP.REQ"/>
-			<Connection Source="R" Destination="E_TP.R" dx1="2513.33"/>
+			<Connection Source="R" Destination="E_TP.R" dx1="2126.67"/>
 			<Connection Source="E_TP.CNF" Destination="Q.E1"/>
 		</EventConnections>
 		<DataConnections>
 			<Connection Source="IN.D1" Destination="E_TP.IN" dx1="260"/>
-			<Connection Source="PT" Destination="E_TP.PT" dx1="1826.67"/>
+			<Connection Source="PT.D1" Destination="E_TP.PT" dx1="493.33"/>
 			<Connection Source="E_TP.Q" Destination="Q.D1" dx1="413.33"/>
 		</DataConnections>
 	</FBNetwork>
