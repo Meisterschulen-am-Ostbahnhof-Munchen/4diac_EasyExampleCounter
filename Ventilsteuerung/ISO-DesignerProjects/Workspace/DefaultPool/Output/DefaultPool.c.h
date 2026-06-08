@@ -1,7 +1,7 @@
 // ISO-Designer ISO 11783   Version 5.7.2.6664 Bucher Automation AG
 // Do not change!
 
-#define WorkingSet_0_Offset                                     1
+#define WorkingSet_Offset                                       1
 #define DataMask_Home_Offset                                   21
 #define Container_Gesamtzaehler_Offset                         77
 #define Container_Tageszaehler_Offset                         135

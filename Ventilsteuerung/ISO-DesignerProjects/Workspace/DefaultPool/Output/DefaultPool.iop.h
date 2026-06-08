@@ -6,7 +6,7 @@
 #define ISO_VERSION_LABEL             "       "
 #define MASK_WIDTH                          480
 #define MASK_HEIGHT                         480
-#define WorkingSet_0                          0
+#define WorkingSet                            0
 #define DataMask_Home                      1000
 #define Container_Gesamtzaehler            3000
 #define Container_Tageszaehler             3001

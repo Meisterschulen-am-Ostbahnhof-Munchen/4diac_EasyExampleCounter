@@ -7,61 +7,51 @@
 	<CompilerInfo packageName="FBs::Counter::subs::Zaehler">
 	</CompilerInfo>
 	<SubAppInterfaceList>
-		<SubAppEventInputs>
-			<SubAppEvent Name="CU" Type="Event" Comment="Count Up">
-			</SubAppEvent>
-			<SubAppEvent Name="CD" Type="Event" Comment="Count Down">
-			</SubAppEvent>
-			<SubAppEvent Name="R" Type="Event" Comment="Reset">
-			</SubAppEvent>
-		</SubAppEventInputs>
-		<SubAppEventOutputs>
-			<SubAppEvent Name="CNF" Type="Event" Comment="Confirmation -- Counter Value was changed">
-			</SubAppEvent>
-		</SubAppEventOutputs>
 		<InputVars>
 			<VarDeclaration Name="KEY" Type="STRING"/>
 			<VarDeclaration Name="u16ObjId" Type="UINT"/>
 		</InputVars>
-		<OutputVars>
-			<VarDeclaration Name="CV" Type="UDINT" Comment="Counter Value"/>
-		</OutputVars>
+		<Plugs>
+			<AdapterDeclaration Name="CV" Type="adapter::types::unidirectional::AUDI" Comment="Counter Value"/>
+		</Plugs>
+		<Sockets>
+			<AdapterDeclaration Name="CU" Type="adapter::types::unidirectional::AX" Comment="Count Up"/>
+			<AdapterDeclaration Name="CD" Type="adapter::types::unidirectional::AX" Comment="Count Down"/>
+			<AdapterDeclaration Name="R" Type="adapter::types::unidirectional::AX" Comment="Reset"/>
+		</Sockets>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<FB Name="E_CTUD_UDINT" Type="iec61499::events::E_CTUD_UDINT" x="100" y="1000">
+		<FB Name="AUDI_FB_CTUD" Type="adapter::iec61131::counters::AUDI_FB_CTUD" x="100" y="1100">
 		</FB>
-		<FB Name="Q_NumericValue" Type="isobus::UT::Q::Q_NumericValue" x="5500" y="900">
+		<FB Name="Q_NumericValue" Type="isobus::UT::Q::Q_NumericValue_AUDI" x="5500" y="900">
 		</FB>
-		<FB Name="NVS_UDINT" Type="logiBUS::storage::esp32_nvs::NVS" x="4133.33" y="2366.67">
+		<FB Name="NVS_AUDI" Type="logiBUS::storage::esp32_nvs::NVS_AUDI" x="4133.33" y="2366.67">
 			<Parameter Name="QI" Value="TRUE"/>
 			<Parameter Name="DEFAULT_VALUE" Value="UDINT#0"/>
 		</FB>
-		<FB Name="E_MERGE_3" Type="iec61499::events::E_MERGE_3" x="1600" y="1000">
+		<FB Name="AUDI_SPLIT_3" Type="adapter::events::unidirectional::AUDI_SPLIT_3" x="1900" y="1400">
 		</FB>
-		<EventConnections>
-			<Connection Source="CU" Destination="E_CTUD_UDINT.CU" dx1="1620"/>
-			<Connection Source="R" Destination="E_CTUD_UDINT.R" dx1="1246.67"/>
-			<Connection Source="NVS_UDINT.INITO" Destination="NVS_UDINT.GET" dx1="273.33" dx2="273.33" dy="-193.33"/>
-			<Connection Source="E_CTUD_UDINT.RO" Destination="E_MERGE_3.EI2"/>
-			<Connection Source="E_MERGE_3.EO" Destination="NVS_UDINT.SET" dx1="1240"/>
-			<Connection Source="E_MERGE_3.EO" Destination="CNF" dx1="1946.67"/>
-			<Connection Source="E_MERGE_3.EO" Destination="Q_NumericValue.REQ" dx1="1446.67"/>
-			<Connection Source="E_CTUD_UDINT.CO" Destination="E_MERGE_3.EI1"/>
-			<Connection Source="E_CTUD_UDINT.LDO" Destination="E_MERGE_3.EI3"/>
-			<Connection Source="CD" Destination="E_CTUD_UDINT.CD" dx1="1433.33"/>
-			<Connection Source="NVS_UDINT.GETO" Destination="E_CTUD_UDINT.LD" dx1="793.33" dx2="1026.67" dy="986.67"/>
-		</EventConnections>
+		<SubApp Name="LD_helper" Type="FBs::Counter::subs::Zaehler::LD_helper" x="-1800" y="1800">
+		</SubApp>
 		<DataConnections>
-			<Connection Source="E_CTUD_UDINT.CV" Destination="Q_NumericValue.u32NewValue" dx1="3913.33"/>
-			<Connection Source="E_CTUD_UDINT.CV" Destination="CV" dx1="173.33"/>
 			<Connection Source="u16ObjId" Destination="Q_NumericValue.u16ObjId" dx1="2840">
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
-			<Connection Source="E_CTUD_UDINT.CV" Destination="NVS_UDINT.VALUE" dx1="193.33"/>
-			<Connection Source="NVS_UDINT.VALUEO" Destination="E_CTUD_UDINT.PV" dx1="640" dx2="640" dy="413.33"/>
-			<Connection Source="KEY" Destination="NVS_UDINT.KEY" dx1="2226.67">
+			<Connection Source="KEY" Destination="NVS_AUDI.KEY" dx1="2226.67">
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
 		</DataConnections>
+		<AdapterConnections>
+			<Connection Source="AUDI_FB_CTUD.CV" Destination="AUDI_SPLIT_3.IN" dx1="193.33"/>
+			<Connection Source="AUDI_SPLIT_3.OUT1" Destination="CV" dx1="886.67"/>
+			<Connection Source="AUDI_SPLIT_3.OUT2" Destination="Q_NumericValue.u32NewValue" dx1="1373.33"/>
+			<Connection Source="AUDI_SPLIT_3.OUT3" Destination="NVS_AUDI.AUDI_IN" dx1="693.33"/>
+			<Connection Source="CU" Destination="AUDI_FB_CTUD.CU" dx1="840"/>
+			<Connection Source="CD" Destination="AUDI_FB_CTUD.CD" dx1="700"/>
+			<Connection Source="R" Destination="AUDI_FB_CTUD.R" dx1="586.67"/>
+			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="LD_helper.IN" dx1="633.33" dx2="80" dy="433.33"/>
+			<Connection Source="LD_helper.OUT" Destination="AUDI_FB_CTUD.PV" dx1="886.67"/>
+			<Connection Source="LD_helper.Q" Destination="AUDI_FB_CTUD.LD" dx1="726.67"/>
+		</AdapterConnections>
 	</SubAppNetwork>
 </SubAppType>

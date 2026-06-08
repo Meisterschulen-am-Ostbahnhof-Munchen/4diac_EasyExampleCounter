@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FBType Name="ILOCK_SWITCH" Comment="Prioritizes the last active input.">
-	<Identification Standard="61499-2">
+	<Identification Standard="61499-2" Description="Copyright (c) 2023 HR Agrartechnik GmbH  &#10; &#10;This program and the accompanying materials are made  &#10;available under the terms of the Eclipse Public License 2.0  &#10;which is available at https://www.eclipse.org/legal/epl-2.0/  &#10; &#10;SPDX-License-Identifier: EPL-2.0">
 	</Identification>
-	<VersionInfo Version="1.0" Author="franz" Date="2026-02-23">
+	<VersionInfo Organization="HR Agrartechnik GmbH" Version="1.0" Author="Franz Höpfinger" Date="2026-02-23" Remarks="initial API and implementation and/or initial documentation">
 	</VersionInfo>
 	<CompilerInfo packageName="logiBUS::signalprocessing::interlock">
 	</CompilerInfo>
@@ -34,7 +34,7 @@
 	</InterfaceList>
 	<BasicFB>
 		<ECC>
-			<ECState Name="START" Comment="Initial State" x="2960" y="560">
+			<ECState Name="STOP" x="2800" y="1440">
 			</ECState>
 			<ECState Name="UP" x="5040" y="720">
 				<ECAction Algorithm="UP" Output="EO_UP"/>
@@ -44,12 +44,11 @@
 				<ECAction Algorithm="DOWN" Output="EO_DOWN"/>
 				<ECAction Output="EO_UP"/>
 			</ECState>
-			<ECState Name="STOP" x="2800" y="1440">
-			</ECState>
+
 			<ECState Name="UP_STOP" x="5040" y="1280">
 				<ECAction Algorithm="STOP" Output="EO_UP"/>
 			</ECState>
-			<ECState Name="DOWN_STOP" x="4720" y="2640">
+			<ECState Name="DOWN_STOP" x="4720" y="2720">
 				<ECAction Algorithm="STOP" Output="EO_DOWN"/>
 			</ECState>
 			<ECTransition Source="STOP" Destination="UP" Condition="EI_UP[DI_UP]" Comment="" x="4173.33" y="1020"/>
@@ -62,31 +61,18 @@
 			<ECTransition Source="DOWN" Destination="DOWN_STOP" Condition="EI_DOWN[NOT DI_DOWN AND NOT DI_UP]" Comment="" x="5473.33" y="2306.67"/>
 			<ECTransition Source="UP_STOP" Destination="STOP" Condition="1" Comment="" x="4133.33" y="1313.33"/>
 			<ECTransition Source="DOWN_STOP" Destination="STOP" Condition="1" Comment="" x="3913.33" y="2120"/>
-			<ECTransition Source="START" Destination="STOP" Condition="1" Comment="" x="2986.67" y="1060"/>
 		</ECC>
 		<Algorithm Name="UP">
-			<ST><![CDATA[ALGORITHM UP
-DO_UP := BOOL#TRUE;
-DO_DOWN := BOOL#FALSE;
-END_ALGORITHM]]></ST>
+			<ST><![CDATA[DO_UP := BOOL#TRUE;
+DO_DOWN := BOOL#FALSE;]]></ST>
 		</Algorithm>
 		<Algorithm Name="DOWN">
-			<ST><![CDATA[
-
-ALGORITHM DOWN
-DO_UP := BOOL#FALSE;
-DO_DOWN := BOOL#TRUE;
-END_ALGORITHM]]></ST>
+			<ST><![CDATA[DO_UP := BOOL#FALSE;
+DO_DOWN := BOOL#TRUE;]]></ST>
 		</Algorithm>
 		<Algorithm Name="STOP">
-			<ST><![CDATA[
-
-ALGORITHM STOP
-DO_UP := BOOL#FALSE;
-DO_DOWN := BOOL#FALSE;
-END_ALGORITHM
-
-]]></ST>
+			<ST><![CDATA[DO_UP := BOOL#FALSE;
+DO_DOWN := BOOL#FALSE;]]></ST>
 		</Algorithm>
 	</BasicFB>
 </FBType>

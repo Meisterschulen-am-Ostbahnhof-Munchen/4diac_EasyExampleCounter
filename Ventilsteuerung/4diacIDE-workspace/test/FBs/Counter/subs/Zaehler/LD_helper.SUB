@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="LD_helper" Comment="Subapplication Type">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="franz" Date="2026-05-04">
+	</VersionInfo>
+	<CompilerInfo packageName="FBs::Counter::subs::Zaehler">
+	</CompilerInfo>
+	<SubAppInterfaceList>
+		<Plugs>
+			<AdapterDeclaration Name="Q" Type="adapter::types::unidirectional::AX"/>
+			<AdapterDeclaration Name="OUT" Type="adapter::types::unidirectional::AUDI"/>
+		</Plugs>
+		<Sockets>
+			<AdapterDeclaration Name="IN" Type="adapter::types::unidirectional::AUDI"/>
+		</Sockets>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="AX_PULSE" Type="adapter::events::unidirectional::timers::AX_PULSE" x="2100" y="-900">
+			<Parameter Name="PT" Value="T#100ms"/>
+		</FB>
+		<FB Name="AUDI_SPLIT_2" Type="adapter::events::unidirectional::AUDI_SPLIT_2" x="-1500" y="0">
+		</FB>
+		<FB Name="AUDI_UDI_TO_UDINT" Type="adapter::conversion::unidirectional::AUDI_UDI_TO_UDINT" x="400" y="-900">
+		</FB>
+		<EventConnections>
+			<Connection Source="AUDI_UDI_TO_UDINT.CNF" Destination="AX_PULSE.REQ"/>
+		</EventConnections>
+		<AdapterConnections>
+			<Connection Source="IN" Destination="AUDI_SPLIT_2.IN" dx1="646.67"/>
+			<Connection Source="AUDI_SPLIT_2.OUT2" Destination="OUT" dx1="5146.67"/>
+			<Connection Source="AX_PULSE.Q" Destination="Q" dx1="1186.67"/>
+			<Connection Source="AUDI_SPLIT_2.OUT1" Destination="AUDI_UDI_TO_UDINT.AUDI_IN" dx1="226.67"/>
+		</AdapterConnections>
+	</SubAppNetwork>
+</SubAppType>

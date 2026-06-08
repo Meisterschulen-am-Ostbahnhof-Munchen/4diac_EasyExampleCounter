@@ -17,7 +17,7 @@
 
 const unsigned char ISO_OP_MEMORY_CLASS isoOP_DefaultPool[] = {
 	17,
-	ID(WorkingSet_0), TYPEID_WORKSET, COLOR(187), 1, ID(DataMask_Home), 1, 0, 2,
+	ID(WorkingSet), TYPEID_WORKSET, COLOR(187), 1, ID(DataMask_Home), 1, 0, 2,
 		XYREF(OutputString_Fasszaehler, 0, 20),
 		'e', 'n',
 		'd', 'e',
