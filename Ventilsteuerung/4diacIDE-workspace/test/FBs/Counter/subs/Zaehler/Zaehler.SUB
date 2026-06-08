@@ -21,8 +21,6 @@
 		</Sockets>
 	</SubAppInterfaceList>
 	<SubAppNetwork>
-		<FB Name="AUDI_FB_CTUD" Type="adapter::iec61131::counters::AUDI_FB_CTUD" x="100" y="1100">
-		</FB>
 		<FB Name="Q_NumericValue" Type="isobus::UT::Q::Q_NumericValue_AUDI" x="5500" y="900">
 		</FB>
 		<FB Name="NVS_AUDI" Type="logiBUS::storage::esp32_nvs::NVS_AUDI" x="4133.33" y="2366.67">
@@ -31,7 +29,7 @@
 		</FB>
 		<FB Name="AUDI_SPLIT_3" Type="adapter::events::unidirectional::AUDI_SPLIT_3" x="1900" y="1400">
 		</FB>
-		<SubApp Name="LD_helper" Type="FBs::Counter::subs::Zaehler::LD_helper" x="-1800" y="1800">
+		<SubApp Name="AUDI_E_CTUD" Type="AUDI_E_CTUD" x="100" y="1400">
 		</SubApp>
 		<DataConnections>
 			<Connection Source="u16ObjId" Destination="Q_NumericValue.u16ObjId" dx1="2840">
@@ -42,16 +40,14 @@
 			</Connection>
 		</DataConnections>
 		<AdapterConnections>
-			<Connection Source="AUDI_FB_CTUD.CV" Destination="AUDI_SPLIT_3.IN" dx1="193.33"/>
+			<Connection Source="AUDI_E_CTUD.CV" Destination="AUDI_SPLIT_3.IN"/>
 			<Connection Source="AUDI_SPLIT_3.OUT1" Destination="CV" dx1="886.67"/>
 			<Connection Source="AUDI_SPLIT_3.OUT2" Destination="Q_NumericValue.u32NewValue" dx1="1373.33"/>
 			<Connection Source="AUDI_SPLIT_3.OUT3" Destination="NVS_AUDI.AUDI_IN" dx1="693.33"/>
-			<Connection Source="CU" Destination="AUDI_FB_CTUD.CU" dx1="840"/>
-			<Connection Source="CD" Destination="AUDI_FB_CTUD.CD" dx1="700"/>
-			<Connection Source="R" Destination="AUDI_FB_CTUD.R" dx1="586.67"/>
-			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="LD_helper.IN" dx1="633.33" dx2="80" dy="433.33"/>
-			<Connection Source="LD_helper.OUT" Destination="AUDI_FB_CTUD.PV" dx1="886.67"/>
-			<Connection Source="LD_helper.Q" Destination="AUDI_FB_CTUD.LD" dx1="726.67"/>
+			<Connection Source="CU" Destination="AUDI_E_CTUD.CU" dx1="840"/>
+			<Connection Source="CD" Destination="AUDI_E_CTUD.CD" dx1="700"/>
+			<Connection Source="R" Destination="AUDI_E_CTUD.R" dx1="586.67"/>
+			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="AUDI_E_CTUD.PV" dx1="633.33" dx2="633.33" dy="433.33"/>
 		</AdapterConnections>
 	</SubAppNetwork>
 </SubAppType>
