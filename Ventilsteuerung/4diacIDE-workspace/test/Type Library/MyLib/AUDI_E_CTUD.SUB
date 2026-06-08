@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SubAppType Name="AUDI_E_CTUD" Comment="Subapplication Type">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="franz" Date="2026-06-08">
+	</VersionInfo>
+	<CompilerInfo>
+	</CompilerInfo>
+	<SubAppInterfaceList>
+		<Plugs>
+			<AdapterDeclaration Name="CV" Type="adapter::types::unidirectional::AUDI"/>
+		</Plugs>
+		<Sockets>
+			<AdapterDeclaration Name="CU" Type="adapter::types::unidirectional::AX" Comment="Count Up"/>
+			<AdapterDeclaration Name="CD" Type="adapter::types::unidirectional::AX" Comment="Count Down"/>
+			<AdapterDeclaration Name="R" Type="adapter::types::unidirectional::AX" Comment="Reset"/>
+			<AdapterDeclaration Name="PV" Type="adapter::types::unidirectional::AUDI"/>
+		</Sockets>
+	</SubAppInterfaceList>
+	<SubAppNetwork>
+		<FB Name="E_CTUD_UDINT" Type="iec61499::events::E_CTUD_UDINT" x="1000" y="0">
+		</FB>
+		<FB Name="AX_F_TRIG_CU" Type="adapter::events::unidirectional::AX_F_TRIG" x="-900" y="-800">
+		</FB>
+		<FB Name="AX_F_TRIG_CD" Type="adapter::events::unidirectional::AX_F_TRIG" x="-900" y="-300">
+		</FB>
+		<FB Name="AX_F_TRIG_R" Type="adapter::events::unidirectional::AX_F_TRIG" x="-900" y="200">
+		</FB>
+		<FB Name="AUDI_UDI_TO_UDINT" Type="adapter::conversion::unidirectional::AUDI_UDI_TO_UDINT" x="-900" y="800">
+		</FB>
+		<FB Name="AUDI_UDINT_TO_UDI" Type="adapter::conversion::unidirectional::AUDI_UDINT_TO_UDI" x="4500" y="-700">
+		</FB>
+		<FB Name="E_D_FF_ANY" Type="iec61499::events::E_D_FF_ANY" x="3400" y="-700">
+		</FB>
+		<EventConnections>
+			<Connection Source="AX_F_TRIG_CU.EO" Destination="E_CTUD_UDINT.CU" dx1="593.33"/>
+			<Connection Source="AX_F_TRIG_CD.EO" Destination="E_CTUD_UDINT.CD" dx1="480"/>
+			<Connection Source="AX_F_TRIG_R.EO" Destination="E_CTUD_UDINT.R" dx1="480"/>
+			<Connection Source="AUDI_UDI_TO_UDINT.CNF" Destination="E_CTUD_UDINT.LD" dx1="553.33"/>
+			<Connection Source="E_CTUD_UDINT.CO" Destination="E_D_FF_ANY.CLK" dx1="720"/>
+			<Connection Source="E_CTUD_UDINT.RO" Destination="E_D_FF_ANY.CLK" dx1="720"/>
+			<Connection Source="E_CTUD_UDINT.LDO" Destination="E_D_FF_ANY.CLK" dx1="720"/>
+			<Connection Source="E_D_FF_ANY.EO" Destination="AUDI_UDINT_TO_UDI.REQ"/>
+		</EventConnections>
+		<DataConnections>
+			<Connection Source="AUDI_UDI_TO_UDINT.IN" Destination="E_CTUD_UDINT.PV" dx1="733.33"/>
+			<Connection Source="E_CTUD_UDINT.CV" Destination="E_D_FF_ANY.D" dx1="1120"/>
+			<Connection Source="E_D_FF_ANY.Q" Destination="AUDI_UDINT_TO_UDI.OUT"/>
+		</DataConnections>
+		<AdapterConnections>
+			<Connection Source="CU" Destination="AX_F_TRIG_CU.QI" dx1="786.67"/>
+			<Connection Source="CD" Destination="AX_F_TRIG_CD.QI" dx1="666.67"/>
+			<Connection Source="AUDI_UDINT_TO_UDI.AUDI_OUT" Destination="CV" dx1="1620"/>
+			<Connection Source="R" Destination="AX_F_TRIG_R.QI" dx1="360"/>
+			<Connection Source="PV" Destination="AUDI_UDI_TO_UDINT.AUDI_IN" dx1="153.33"/>
+		</AdapterConnections>
+	</SubAppNetwork>
+</SubAppType>
