@@ -29,7 +29,7 @@
 		</FB>
 		<FB Name="Q_NumericValue_Ziel" Type="isobus::UT::Q::Q_NumericValue_AUDI" x="9400" y="900">
 		</FB>
-		<FB Name="AX_SEL" Type="iec61131::selection::F_SEL" x="4600" y="-1100">
+		<FB Name="AX_SEL" Type="iec61131::selection::F_SEL" x="5200" y="-1000">
 			<Parameter Name="IN0" Value="ID_NULL"/>
 			<Parameter Name="IN1" Value="OutputString_ZielErreicht"/>
 		</FB>
@@ -54,7 +54,7 @@
 			<Connection Source="u16ObjId_Pointer" Destination="Q_NumericValue_Ziel_erreicht.u16ObjId" dx1="4066.67">
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>
-			<Connection Source="AX_SEL.OUT" Destination="Q_NumericValue_Ziel_erreicht.u32NewValue" dx1="926.67"/>
+			<Connection Source="AX_SEL.OUT" Destination="Q_NumericValue_Ziel_erreicht.u32NewValue" dx1="406.67"/>
 			<Connection Source="u16ObjId_Ziel" Destination="Q_NumericValue_Ziel.u16ObjId" dx1="5273.33">
 				<Attribute Name="Visible" Value="false"/>
 			</Connection>

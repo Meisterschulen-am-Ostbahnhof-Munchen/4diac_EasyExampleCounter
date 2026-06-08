@@ -47,7 +47,7 @@
 			<Connection Source="CU" Destination="AUDI_E_CTUD.CU" dx1="840"/>
 			<Connection Source="CD" Destination="AUDI_E_CTUD.CD" dx1="700"/>
 			<Connection Source="R" Destination="AUDI_E_CTUD.R" dx1="586.67"/>
-			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="AUDI_E_CTUD.PV" dx1="633.33" dx2="633.33" dy="433.33"/>
+			<Connection Source="NVS_AUDI.AUDI_OUT" Destination="AUDI_E_CTUD.PV" dx1="433.33" dx2="693.33" dy="340"/>
 		</AdapterConnections>
 	</SubAppNetwork>
 </SubAppType>
