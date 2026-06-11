@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FBType Name="CROSS_JOYSTICK" Comment="Behaves like a cross-joystick: transitions between directional states (LEFT, RIGHT, UP, DOWN) must go through CENTER.">
+	<Identification Standard="61499-2" Description="Copyright (c) 2026 HR Agrartechnik GmbH">
+	</Identification>
+	<VersionInfo Organization="HR Agrartechnik GmbH" Version="1.0" Author="Franz Höpfinger" Date="2026-06-11" Remarks="Initial implementation of Cross-Joystick">
+	</VersionInfo>
+	<CompilerInfo packageName="logiBUS::signalprocessing::interlock">
+	</CompilerInfo>
+	<InterfaceList>
+		<EventInputs>
+			<Event Name="EI" Type="Event">
+				<With Var="DI_LEFT"/>
+				<With Var="DI_RIGHT"/>
+				<With Var="DI_UP"/>
+				<With Var="DI_DOWN"/>
+			</Event>
+		</EventInputs>
+		<EventOutputs>
+			<Event Name="EO" Type="Event">
+				<With Var="DO_LEFT"/>
+				<With Var="DO_RIGHT"/>
+				<With Var="DO_UP"/>
+				<With Var="DO_DOWN"/>
+			</Event>
+		</EventOutputs>
+		<InputVars>
+			<VarDeclaration Name="DI_LEFT" Type="BOOL" Comment="Joystick Left position switch"/>
+			<VarDeclaration Name="DI_RIGHT" Type="BOOL" Comment="Joystick Right position switch"/>
+			<VarDeclaration Name="DI_UP" Type="BOOL" Comment="Joystick Up position switch"/>
+			<VarDeclaration Name="DI_DOWN" Type="BOOL" Comment="Joystick Down position switch"/>
+		</InputVars>
+		<OutputVars>
+			<VarDeclaration Name="DO_LEFT" Type="BOOL" Comment="Output Left indicator"/>
+			<VarDeclaration Name="DO_RIGHT" Type="BOOL" Comment="Output Right indicator"/>
+			<VarDeclaration Name="DO_UP" Type="BOOL" Comment="Output Up indicator"/>
+			<VarDeclaration Name="DO_DOWN" Type="BOOL" Comment="Output Down indicator"/>
+		</OutputVars>
+	</InterfaceList>
+	<BasicFB>
+		<ECC>
+			<ECState Name="CENTER" x="2000" y="2000">
+				<ECAction Algorithm="CENTER" Output="EO"/>
+			</ECState>
+			<ECState Name="LEFT" x="1000" y="2000">
+				<ECAction Algorithm="LEFT" Output="EO"/>
+			</ECState>
+			<ECState Name="RIGHT" x="3000" y="2000">
+				<ECAction Algorithm="RIGHT" Output="EO"/>
+			</ECState>
+			<ECState Name="UP" x="2000" y="1000">
+				<ECAction Algorithm="UP" Output="EO"/>
+			</ECState>
+			<ECState Name="DOWN" x="2000" y="3000">
+				<ECAction Algorithm="DOWN" Output="EO"/>
+			</ECState>
+			<ECTransition Source="CENTER" Destination="LEFT" Condition="EI[DI_LEFT]" Comment="" x="1500" y="2000"/>
+			<ECTransition Source="CENTER" Destination="RIGHT" Condition="EI[DI_RIGHT]" Comment="" x="2500" y="2000"/>
+			<ECTransition Source="CENTER" Destination="UP" Condition="EI[DI_UP]" Comment="" x="2000" y="1500"/>
+			<ECTransition Source="CENTER" Destination="DOWN" Condition="EI[DI_DOWN]" Comment="" x="2000" y="2500"/>
+			<ECTransition Source="LEFT" Destination="CENTER" Condition="EI[NOT DI_LEFT]" Comment="" x="1500" y="2100"/>
+			<ECTransition Source="RIGHT" Destination="CENTER" Condition="EI[NOT DI_RIGHT]" Comment="" x="2500" y="2100"/>
+			<ECTransition Source="UP" Destination="CENTER" Condition="EI[NOT DI_UP]" Comment="" x="2100" y="1500"/>
+			<ECTransition Source="DOWN" Destination="CENTER" Condition="EI[NOT DI_DOWN]" Comment="" x="2100" y="2500"/>
+		</ECC>
+		<Algorithm Name="CENTER">
+			<ST><![CDATA[DO_LEFT := BOOL#FALSE;
+DO_RIGHT := BOOL#FALSE;
+DO_UP := BOOL#FALSE;
+DO_DOWN := BOOL#FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="LEFT">
+			<ST><![CDATA[DO_LEFT := BOOL#TRUE;
+DO_RIGHT := BOOL#FALSE;
+DO_UP := BOOL#FALSE;
+DO_DOWN := BOOL#FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="RIGHT">
+			<ST><![CDATA[DO_LEFT := BOOL#FALSE;
+DO_RIGHT := BOOL#TRUE;
+DO_UP := BOOL#FALSE;
+DO_DOWN := BOOL#FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="UP">
+			<ST><![CDATA[DO_LEFT := BOOL#FALSE;
+DO_RIGHT := BOOL#FALSE;
+DO_UP := BOOL#TRUE;
+DO_DOWN := BOOL#FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="DOWN">
+			<ST><![CDATA[DO_LEFT := BOOL#FALSE;
+DO_RIGHT := BOOL#FALSE;
+DO_UP := BOOL#FALSE;
+DO_DOWN := BOOL#TRUE;]]></ST>
+		</Algorithm>
+	</BasicFB>
+</FBType>
