@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FBType Name="CrossJoystick" Comment="Joystick block with 4 directional states and Center, transitions only over Center">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Franz Höpfinger" Date="2026-06-12">
+	</VersionInfo>
+	<CompilerInfo packageName="MyLib::sys">
+	</CompilerInfo>
+	<InterfaceList>
+		<EventInputs>
+			<Event Name="REQ" Type="Event" Comment="Update State">
+				<With Var="I_Right"/>
+				<With Var="I_Left"/>
+				<With Var="I_Up"/>
+				<With Var="I_Down"/>
+			</Event>
+		</EventInputs>
+		<EventOutputs>
+			<Event Name="CNF" Type="Event" Comment="State Updated">
+				<With Var="O_Center"/>
+				<With Var="O_Right"/>
+				<With Var="O_Left"/>
+				<With Var="O_Up"/>
+				<With Var="O_Down"/>
+			</Event>
+		</EventOutputs>
+		<InputVars>
+			<VarDeclaration Name="I_Right" Type="BOOL" Comment="Right Input" InitialValue="FALSE"/>
+			<VarDeclaration Name="I_Left" Type="BOOL" Comment="Left Input" InitialValue="FALSE"/>
+			<VarDeclaration Name="I_Up" Type="BOOL" Comment="Up Input" InitialValue="FALSE"/>
+			<VarDeclaration Name="I_Down" Type="BOOL" Comment="Down Input" InitialValue="FALSE"/>
+		</InputVars>
+		<OutputVars>
+			<VarDeclaration Name="O_Center" Type="BOOL" Comment="Center Output" InitialValue="TRUE"/>
+			<VarDeclaration Name="O_Right" Type="BOOL" Comment="Right Output" InitialValue="FALSE"/>
+			<VarDeclaration Name="O_Left" Type="BOOL" Comment="Left Output" InitialValue="FALSE"/>
+			<VarDeclaration Name="O_Up" Type="BOOL" Comment="Up Output" InitialValue="FALSE"/>
+			<VarDeclaration Name="O_Down" Type="BOOL" Comment="Down Output" InitialValue="FALSE"/>
+		</OutputVars>
+	</InterfaceList>
+	<BasicFB>
+		<ECC>
+			<ECState Name="Center" Comment="Center position" x="1000" y="1000">
+				<ECAction Algorithm="Alg_Center" Output="CNF"/>
+			</ECState>
+			<ECState Name="StateRight" Comment="Right position" x="2000" y="1000">
+				<ECAction Algorithm="Alg_Right" Output="CNF"/>
+			</ECState>
+			<ECState Name="StateLeft" Comment="Left position" x="0" y="1000">
+				<ECAction Algorithm="Alg_Left" Output="CNF"/>
+			</ECState>
+			<ECState Name="StateUp" Comment="Up position" x="1000" y="0">
+				<ECAction Algorithm="Alg_Up" Output="CNF"/>
+			</ECState>
+			<ECState Name="StateDown" Comment="Down position" x="1000" y="2000">
+				<ECAction Algorithm="Alg_Down" Output="CNF"/>
+			</ECState>
+			<ECTransition Source="Center" Destination="StateRight" Condition="REQ[I_Right]" Comment="" x="1500" y="1000"/>
+			<ECTransition Source="Center" Destination="StateLeft" Condition="REQ[I_Left]" Comment="" x="500" y="1000"/>
+			<ECTransition Source="Center" Destination="StateUp" Condition="REQ[I_Up]" Comment="" x="1000" y="500"/>
+			<ECTransition Source="Center" Destination="StateDown" Condition="REQ[I_Down]" Comment="" x="1000" y="1500"/>
+			<ECTransition Source="StateRight" Destination="Center" Condition="REQ[NOT I_Right]" Comment="" x="1500" y="1200"/>
+			<ECTransition Source="StateLeft" Destination="Center" Condition="REQ[NOT I_Left]" Comment="" x="500" y="1200"/>
+			<ECTransition Source="StateUp" Destination="Center" Condition="REQ[NOT I_Up]" Comment="" x="1200" y="500"/>
+			<ECTransition Source="StateDown" Destination="Center" Condition="REQ[NOT I_Down]" Comment="" x="1200" y="1500"/>
+		</ECC>
+		<Algorithm Name="Alg_Center" Comment="Center position active">
+			<ST><![CDATA[O_Center := TRUE;
+O_Right := FALSE;
+O_Left := FALSE;
+O_Up := FALSE;
+O_Down := FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="Alg_Right" Comment="Right position active">
+			<ST><![CDATA[O_Center := FALSE;
+O_Right := TRUE;
+O_Left := FALSE;
+O_Up := FALSE;
+O_Down := FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="Alg_Left" Comment="Left position active">
+			<ST><![CDATA[O_Center := FALSE;
+O_Right := FALSE;
+O_Left := TRUE;
+O_Up := FALSE;
+O_Down := FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="Alg_Up" Comment="Up position active">
+			<ST><![CDATA[O_Center := FALSE;
+O_Right := FALSE;
+O_Left := FALSE;
+O_Up := TRUE;
+O_Down := FALSE;]]></ST>
+		</Algorithm>
+		<Algorithm Name="Alg_Down" Comment="Down position active">
+			<ST><![CDATA[O_Center := FALSE;
+O_Right := FALSE;
+O_Left := FALSE;
+O_Up := FALSE;
+O_Down := TRUE;]]></ST>
+		</Algorithm>
+	</BasicFB>
+	<Attribute Name="eclipse4diac::core::TypeHash" Value="''"/>
+</FBType>
