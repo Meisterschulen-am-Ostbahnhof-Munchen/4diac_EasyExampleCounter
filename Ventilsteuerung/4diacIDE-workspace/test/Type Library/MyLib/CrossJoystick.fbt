@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FBType Name="CrossJoystick" Comment="Basic FB representing a Cross-Joystick">
+	<Identification Standard="61499-2">
+	</Identification>
+	<VersionInfo Version="1.0" Author="Antigravity" Date="2026-06-15" Organization="4DIAC-Consortium">
+	</VersionInfo>
+	<CompilerInfo packageName="logiBUS::utils::sequence::joystick">
+	</CompilerInfo>
+	<InterfaceList>
+		<EventInputs>
+			<Event Name="EI" Type="Event" Comment="Event input for state changes">
+				<With Var="DI_Right"/>
+				<With Var="DI_Left"/>
+				<With Var="DI_Up"/>
+				<With Var="DI_Down"/>
+			</Event>
+		</EventInputs>
+		<EventOutputs>
+			<Event Name="EO" Type="Event" Comment="Event output indicating state execution">
+				<With Var="Q_Right"/>
+				<With Var="Q_Left"/>
+				<With Var="Q_Up"/>
+				<With Var="Q_Down"/>
+				<With Var="Q_Center"/>
+				<With Var="STATE"/>
+			</Event>
+		</EventOutputs>
+		<InputVars>
+			<VarDeclaration Name="DI_Right" Type="BOOL" Comment="Joystick moved Right"/>
+			<VarDeclaration Name="DI_Left" Type="BOOL" Comment="Joystick moved Left"/>
+			<VarDeclaration Name="DI_Up" Type="BOOL" Comment="Joystick moved Up"/>
+			<VarDeclaration Name="DI_Down" Type="BOOL" Comment="Joystick moved Down"/>
+		</InputVars>
+		<OutputVars>
+			<VarDeclaration Name="Q_Right" Type="BOOL" Comment="Output indicating Right state"/>
+			<VarDeclaration Name="Q_Left" Type="BOOL" Comment="Output indicating Left state"/>
+			<VarDeclaration Name="Q_Up" Type="BOOL" Comment="Output indicating Up state"/>
+			<VarDeclaration Name="Q_Down" Type="BOOL" Comment="Output indicating Down state"/>
+			<VarDeclaration Name="Q_Center" Type="BOOL" Comment="Output indicating Center state"/>
+			<VarDeclaration Name="STATE" Type="STRING" Comment="Current state name"/>
+		</OutputVars>
+	</InterfaceList>
+	<BasicFB>
+		<ECC>
+			<ECState Name="State_Center" Comment="Initial State (Joystick in center)" x="1500" y="1500">
+				<ECAction Algorithm="SetCenter" Output="EO"/>
+			</ECState>
+			<ECState Name="State_Right" Comment="Joystick in Right state" x="2500" y="1500">
+				<ECAction Algorithm="SetRight" Output="EO"/>
+			</ECState>
+			<ECState Name="State_Left" Comment="Joystick in Left state" x="500" y="1500">
+				<ECAction Algorithm="SetLeft" Output="EO"/>
+			</ECState>
+			<ECState Name="State_Up" Comment="Joystick in Up state" x="1500" y="500">
+				<ECAction Algorithm="SetUp" Output="EO"/>
+			</ECState>
+			<ECState Name="State_Down" Comment="Joystick in Down state" x="1500" y="2500">
+				<ECAction Algorithm="SetDown" Output="EO"/>
+			</ECState>
+			
+			<!-- Transitions from Center to directions -->
+			<ECTransition Source="State_Center" Destination="State_Right" Condition="EI[DI_Right]" Comment="Move Right" x="2000" y="1400"/>
+			<ECTransition Source="State_Center" Destination="State_Left" Condition="EI[DI_Left]" Comment="Move Left" x="1000" y="1400"/>
+			<ECTransition Source="State_Center" Destination="State_Up" Condition="EI[DI_Up]" Comment="Move Up" x="1400" y="1000"/>
+			<ECTransition Source="State_Center" Destination="State_Down" Condition="EI[DI_Down]" Comment="Move Down" x="1400" y="2000"/>
+			
+			<!-- Transitions from directions back to Center (no direct cross transitions allowed) -->
+			<ECTransition Source="State_Right" Destination="State_Center" Condition="EI[NOT DI_Right]" Comment="Return to Center" x="2000" y="1600"/>
+			<ECTransition Source="State_Left" Destination="State_Center" Condition="EI[NOT DI_Left]" Comment="Return to Center" x="1000" y="1600"/>
+			<ECTransition Source="State_Up" Destination="State_Center" Condition="EI[NOT DI_Up]" Comment="Return to Center" x="1600" y="1000"/>
+			<ECTransition Source="State_Down" Destination="State_Center" Condition="EI[NOT DI_Down]" Comment="Return to Center" x="1600" y="2000"/>
+		</ECC>
+		
+		<Algorithm Name="SetCenter" Comment="Set Center Outputs">
+			<ST><![CDATA[Q_Right := BOOL#FALSE;
+Q_Left := BOOL#FALSE;
+Q_Up := BOOL#FALSE;
+Q_Down := BOOL#FALSE;
+Q_Center := BOOL#TRUE;
+STATE := 'Center';]]></ST>
+		</Algorithm>
+		<Algorithm Name="SetRight" Comment="Set Right Outputs">
+			<ST><![CDATA[Q_Right := BOOL#TRUE;
+Q_Left := BOOL#FALSE;
+Q_Up := BOOL#FALSE;
+Q_Down := BOOL#FALSE;
+Q_Center := BOOL#FALSE;
+STATE := 'Right';]]></ST>
+		</Algorithm>
+		<Algorithm Name="SetLeft" Comment="Set Left Outputs">
+			<ST><![CDATA[Q_Right := BOOL#FALSE;
+Q_Left := BOOL#TRUE;
+Q_Up := BOOL#FALSE;
+Q_Down := BOOL#FALSE;
+Q_Center := BOOL#FALSE;
+STATE := 'Left';]]></ST>
+		</Algorithm>
+		<Algorithm Name="SetUp" Comment="Set Up Outputs">
+			<ST><![CDATA[Q_Right := BOOL#FALSE;
+Q_Left := BOOL#FALSE;
+Q_Up := BOOL#TRUE;
+Q_Down := BOOL#FALSE;
+Q_Center := BOOL#FALSE;
+STATE := 'Up';]]></ST>
+		</Algorithm>
+		<Algorithm Name="SetDown" Comment="Set Down Outputs">
+			<ST><![CDATA[Q_Right := BOOL#FALSE;
+Q_Left := BOOL#FALSE;
+Q_Up := BOOL#FALSE;
+Q_Down := BOOL#TRUE;
+Q_Center := BOOL#FALSE;
+STATE := 'Down';]]></ST>
+		</Algorithm>
+	</BasicFB>
+</FBType>
