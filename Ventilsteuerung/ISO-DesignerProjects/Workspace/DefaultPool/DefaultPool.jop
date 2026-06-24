@@ -2726,10 +2726,10 @@
 					<Value>210</Value>
 				</Property>
 				<Property Name="PosValVariableObjectID">
-					<Value>21001</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="TargetValVariableObjectID">
-					<Value>21002</Value>
+					<Value>-1</Value>
 				</Property>
 				<Property Name="MinValVarObjectID">
 					<Value>-1</Value>
@@ -2741,10 +2741,6 @@
 					<Value>0</Value>
 				</Property>
 			</PropertySheet>
-			<Objects>
-				<Object JVS-ID="21001"/>
-				<Object JVS-ID="21002"/>
-			</Objects>
 		</Object>
 		<Object Class="CRectangle" Name="Rectangle" ObjectName="LinearBargraph_Tageszaehler" Pinned="FALSE" JVS-ID="18001">
 			<PropertySheet Name="Rectangle">

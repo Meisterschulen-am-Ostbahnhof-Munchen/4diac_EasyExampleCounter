@@ -119,7 +119,7 @@ const unsigned char ISO_OP_MEMORY_CLASS isoOP_DefaultPool[] = {
 	ID(Meter_Tageszaehler), TYPEID_OUTMETER, WORD(80), COLOR_BLACK, COLOR_BLACK, COLOR_BLACK, 13, 11, 165, 105, 
 		WORD(0), WORD(100), ID(NumberVariable_Tageszaehler), WORD(0), 0, 
 	ID(LinearBargraph_Gesamtzaehler), TYPEID_OUTLINBAR, WORD(60), WORD(180), COLOR_BLACK, COLOR_RED, 39, 11, 
-		WORD(0), WORD(100), ID(NumberVariable_Gesamtzaehler), WORD(0), ID(NumberVariable_Gesamtziel), WORD(0), 0, 
+		WORD(0), WORD(100), ID(ID_NULL), WORD(0), ID(ID_NULL), WORD(0), 0, 
 	ID(LinearBargraph_Tageszaehler), TYPEID_OUTLINBAR, WORD(60), WORD(180), COLOR_BLACK, COLOR_RED, 39, 11, 
 		WORD(0), WORD(100), ID(NumberVariable_Tageszaehler), WORD(0), ID(NumberVariable_Tagesziel), WORD(0), 0, 
 	ID(Icon_Button_MinusMinus), TYPEID_OUTPICT, WORD(72), WORD(72), WORD(72), 
