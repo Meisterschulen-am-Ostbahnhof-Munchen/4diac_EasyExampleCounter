@@ -60,7 +60,7 @@
 <xs:complexType name="SubApp">
   <xs:annotation>
     <xs:documentation>
-      Constraint: Type and the children SubAppInterfaceList and SubAppNetwork are mutaly exclusive.
+      Constraint: Type and the children SubAppInterfaceList and SubAppNetwork are mutually exclusive.
     </xs:documentation>
   </xs:annotation>
   <xs:sequence>

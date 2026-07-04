@@ -2,7 +2,7 @@
 
 Bei der Benennung von Variablen, Funktionsbausteinen, Events, Adaptern oder Algorithmen dürfen die folgenden reservierten Schlüsselwörter (Keywords) **nicht** verwendet werden (Groß-/Kleinschreibung wird ignoriert). 
 
-Diese Liste basiert auf [FordiacKeywords.java](file:///C:/git/ms/4diac-ide/plugins/org.eclipse.fordiac.ide.model/src/org/eclipse/fordiac/ide/model/FordiacKeywords.java).
+Diese Liste basiert auf [FordiacKeywords.java](https://github.com/eclipse-4diac/4diac-ide/blob/master/plugins/org.eclipse.fordiac.ide.model/src/org/eclipse/fordiac/ide/model/FordiacKeywords.java).
 
 ---
 

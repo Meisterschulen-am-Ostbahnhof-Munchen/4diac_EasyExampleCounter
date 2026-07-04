@@ -26,8 +26,7 @@ def validate_xml(xml_path, schemas_dir):
     xsd_valid = False
     try:
         # Parse XML to find the root element type
-        parser = etree.XMLParser(remove_blank_text=True)
-        xml_doc = etree.parse(xml_path, parser)
+        parser = etree.XMLParser(remove_blank_text=True, resolve_entities=False, no_network=True, load_dtd=False)
         root_tag = xml_doc.getroot().tag
         
         # Strip namespace prefix if any

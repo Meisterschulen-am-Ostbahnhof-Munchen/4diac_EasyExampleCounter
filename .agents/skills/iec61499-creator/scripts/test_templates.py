@@ -7,7 +7,8 @@ def main():
     templates_dir = os.path.abspath(os.path.join(script_dir, '..', 'templates'))
     validate_script = os.path.join(script_dir, 'validate.py')
     
-    files = [f for f in os.listdir(templates_dir) if os.path.isfile(os.path.join(templates_dir, f))]
+    valid_ext = {'.fbt', '.adp', '.sub', '.dtp', '.atp', '.fct', '.gcf'}
+    files = [f for f in os.listdir(templates_dir) if os.path.isfile(os.path.join(templates_dir, f)) and os.path.splitext(f)[1].lower() in valid_ext]
     
     all_success = True
     for file in files:
