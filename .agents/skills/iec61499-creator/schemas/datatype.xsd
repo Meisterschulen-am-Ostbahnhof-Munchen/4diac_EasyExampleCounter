@@ -21,7 +21,6 @@
     <xs:complexContent>
       <xs:extension base="LibraryElement">
         <xs:sequence>
-          <xs:element name="ASN1Tag" type="ASN1Tag" minOccurs="0" maxOccurs="1"/>
           <xs:choice>
             <xs:element ref="DirectlyDerivedType"/>
             <xs:element ref="EnumeratedType"/>
@@ -35,11 +34,6 @@
     </xs:complexContent>
   </xs:complexType>
 </xs:element>
-
-<xs:complexType name="ASN1Tag">
-  <xs:attribute name="Class"  type="xs:string" use="required"/>
-  <xs:attribute name="Number" type="xs:integer" use="required"/>
-</xs:complexType>
 
 <xs:complexType name="UserDefinedDataType"  abstract="true">
   <xs:attribute name="InitialValue" type="xs:string" use="optional"/>
@@ -111,6 +105,12 @@
 <xs:element name="VarDeclaration" type="VarDeclaration"/>
 <xs:complexType name="VarDeclaration">
   <xs:attributeGroup ref="NameTypeCommentAttributes"/>
+  <xs:attribute name="ArraySize"    type="xs:string"   use="optional"/>
+  <xs:attribute name="InitialValue" type="xs:string"   use="optional"/>
+</xs:complexType>
+
+<xs:complexType name="FunctionVarDeclaration">
+  <xs:attributeGroup ref="NameTypeCommentAttributesOrEmpty"/>
   <xs:attribute name="ArraySize"    type="xs:string"   use="optional"/>
   <xs:attribute name="InitialValue" type="xs:string"   use="optional"/>
 </xs:complexType>

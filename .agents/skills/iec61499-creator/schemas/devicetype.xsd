@@ -14,7 +14,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 <xs:include schemaLocation="system.xsd"/>
+<xs:include schemaLocation="common.xsd"/>
 
+<xs:include schemaLocation="fbnetwork.xsd"/>
 <xs:element name="DeviceType">
   <xs:complexType>
     <xs:complexContent>
@@ -31,7 +33,7 @@
 </xs:element>
 
 <xs:complexType name="ResourceTypeName">
-  <xs:attribute name="Name" type="xs:string" use="required"/>
+  <xs:attribute name="Name" type="ImportDeclaration" use="required"/>
 </xs:complexType>
 
 </xs:schema>

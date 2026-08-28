@@ -16,6 +16,7 @@
 <xs:include schemaLocation="block-common.xsd"/>
 <xs:include schemaLocation="fbnetwork.xsd"/>
 
+<xs:include schemaLocation="common.xsd"/>
 <xs:complexType name="SubAppInterfaceList">
   <xs:sequence>
     <xs:element name="SubAppEventInputs"  type="SubAppEventInputs"  minOccurs="0" maxOccurs="1"/>
@@ -61,12 +62,13 @@
   <xs:annotation>
     <xs:documentation>
       Constraint: Type and the children SubAppInterfaceList and SubAppNetwork are mutually exclusive.
+                  Parameter children are only valid when no SubAppInterfaceList and SubAppNetwork is present.
     </xs:documentation>
   </xs:annotation>
   <xs:sequence>
     <xs:element name="SubAppInterfaceList" type="SubAppInterfaceList" minOccurs="0"/>
     <xs:element name="SubAppNetwork"       type="SubAppNetwork"       minOccurs="0"/>
-    <xs:group ref="ParameterAttributeGroup" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:group ref="ParameterAttributeGroup"/>
   </xs:sequence>
   <xs:attributeGroup ref="NameCommentAttributes"/>
   <xs:attributeGroup ref="PositionAttributes"/>

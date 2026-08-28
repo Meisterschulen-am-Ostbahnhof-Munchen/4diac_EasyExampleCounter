@@ -16,6 +16,7 @@
 <xs:include schemaLocation="block-common.xsd"/>
 <xs:include schemaLocation="fbnetwork.xsd"/>
 
+<xs:include schemaLocation="common.xsd"/>
 <xs:element name="FBType">
   <xs:complexType>
     <xs:complexContent>
@@ -87,13 +88,13 @@
   <xs:attribute name="Source"      type="Identifier" use="required"/>
   <xs:attribute name="Destination" type="Identifier" use="required"/>
   <xs:attribute name="Condition"   type="xs:string"  use="required"/>
-  <xs:attribute name="Comment"     type="xs:string"  use="required"/>
+  <xs:attribute name="Comment"     type="xs:string"  use="optional"/>
   <xs:attributeGroup ref="PositionAttributes"/>
 </xs:complexType>
 
 <xs:complexType name="ECAction">
-  <xs:attribute name="Algorithm" type="Identifier" use="required"/>
-  <xs:attribute name="Output"    type="xs:string"  use="required"/>
+  <xs:attribute name="Algorithm" type="Identifier" use="optional"/>
+  <xs:attribute name="Output"    type="xs:string"  use="optional"/>
 </xs:complexType>
 
 <xs:complexType name="Algorithm">
@@ -105,6 +106,5 @@
   </xs:sequence>
   <xs:attributeGroup ref="NameCommentAttributes"/>
 </xs:complexType>
-
 
 </xs:schema>

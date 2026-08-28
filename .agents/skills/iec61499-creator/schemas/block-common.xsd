@@ -15,6 +15,7 @@
 
 <xs:include schemaLocation="datatype.xsd"/>
 
+<xs:include schemaLocation="common.xsd"/>
 <!-- ============================================== -->
 <!-- FB Interface                                   -->
 <!-- ============================================== -->
@@ -90,21 +91,6 @@
   <xs:attributeGroup ref="NameTypeCommentAttributes"/>
   <xs:attributeGroup ref="PositionAttributes"/>
 </xs:complexType>
-
-<xs:complexType name="Parameter">
-  <xs:sequence>
-    <xs:element name="Attribute" type="Attribute" minOccurs="0" maxOccurs="unbounded"/>
-  </xs:sequence>
-  <xs:attributeGroup ref="StructNameCommentAttributes"/>
-  <xs:attribute name="Value"   type="xs:string"        use="required"/>
-</xs:complexType>
-
-<xs:group name="ParameterAttributeGroup">
-  <xs:choice>
-    <xs:element name="Parameter" type="Parameter"/>
-    <xs:element name="Attribute" type="Attribute"/>
-  </xs:choice>
-</xs:group>
 
 
 <!-- ============================================== -->
