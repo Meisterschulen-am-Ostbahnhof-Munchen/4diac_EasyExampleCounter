@@ -29,8 +29,8 @@
 		</FB>
 		<FB Name="AUDI_SPLIT_3" Type="adapter::events::unidirectional::AUDI_SPLIT_3" x="1900" y="1400">
 		</FB>
-		<SubApp Name="AUDI_E_CTUD" Type="AUDI_E_CTUD" x="100" y="1400">
-		</SubApp>
+		<FB Name="AUDI_E_CTUD" Type="adapter::iec61131::counters::AUDI_FB_CTUD" x="100" y="1400">
+		</FB>
 		<DataConnections>
 			<Connection Source="u16ObjId" Destination="Q_NumericValue.u16ObjId" dx1="2840">
 				<Attribute Name="Visible" Value="false"/>
@@ -40,7 +40,7 @@
 			</Connection>
 		</DataConnections>
 		<AdapterConnections>
-			<Connection Source="AUDI_E_CTUD.CV" Destination="AUDI_SPLIT_3.IN"/>
+			<Connection Source="AUDI_E_CTUD.CV" Destination="AUDI_SPLIT_3.IN" dx1="406.67"/>
 			<Connection Source="AUDI_SPLIT_3.OUT1" Destination="CV" dx1="886.67"/>
 			<Connection Source="AUDI_SPLIT_3.OUT2" Destination="Q_NumericValue.u32NewValue" dx1="1373.33"/>
 			<Connection Source="AUDI_SPLIT_3.OUT3" Destination="NVS_AUDI.AUDI_IN" dx1="693.33"/>

@@ -21,7 +21,7 @@
 	<SubAppNetwork>
 		<FB Name="Q_NumericValue_Ziel_erreicht" Type="isobus::UT::Q::Q_NumericValue_AUDI" x="7100" y="-1100">
 		</FB>
-		<FB Name="F_GE" Type="iec61131::comparison::AUDI_GE" x="2660" y="-660">
+		<FB Name="F_GE" Type="adapter::iec61131::comparison::AUDI_GE" x="2660" y="-660">
 		</FB>
 		<FB Name="NVS_UDINT" Type="logiBUS::storage::esp32_nvs::NVS_AUDI" x="5060" y="800">
 			<Parameter Name="QI" Value="TRUE"/>
@@ -29,9 +29,7 @@
 		</FB>
 		<FB Name="Q_NumericValue_Ziel" Type="isobus::UT::Q::Q_NumericValue_AUDI" x="9400" y="900">
 		</FB>
-		<FB Name="AX_SEL" Type="adapter::iec61131::selection::AX_SEL_AUDI" x="4600" y="-1100">
-			<Parameter Name="IN0" Value="ID_NULL"/>
-			<Parameter Name="IN1" Value="OutputString_ZielErreicht"/>
+		<FB Name="AX_SEL" Type="adapter::iec61131::selection::AUDI_AX_SEL_AUDI" x="4600" y="-1100">
 		</FB>
 		<FB Name="IN_NumberVariable" Type="isobus::UT::io::NumericValue::NumericValue_IDA" x="700" y="700">
 			<Parameter Name="QI" Value="TRUE"/>
@@ -39,6 +37,12 @@
 		<FB Name="AD_TO_AUDI" Type="adapter::conversion::unidirectional::AD_TO_AUDI" x="3060" y="1200">
 		</FB>
 		<FB Name="AUDI_SPLIT_2" Type="adapter::events::unidirectional::AUDI_SPLIT_2" x="7200" y="1200">
+		</FB>
+		<FB Name="initval_AUDI_ID_NULL" Type="adapter::types::unidirectional::AUDI::initval::initval_AUDI" x="2300" y="-2200">
+			<Parameter Name="INIT_VAL" Value="ID_NULL"/>
+		</FB>
+		<FB Name="initval_AUDI_OutputString_ZielErreicht" Type="adapter::types::unidirectional::AUDI::initval::initval_AUDI" x="1900" y="-1600">
+			<Parameter Name="INIT_VAL" Value="OutputString_ZielErreicht"/>
 		</FB>
 		<DataConnections>
 			<Connection Source="u16ObjId_Pointer" Destination="Q_NumericValue_Ziel_erreicht.u16ObjId" dx1="4066.67">
@@ -56,13 +60,15 @@
 		</DataConnections>
 		<AdapterConnections>
 			<Connection Source="F_GE.OUT" Destination="AX_SEL.G" dx1="700"/>
-			<Connection Source="AX_SEL.OUT" Destination="Q_NumericValue_Ziel_erreicht.u32NewValue"/>
+			<Connection Source="AX_SEL.OUT" Destination="Q_NumericValue_Ziel_erreicht.u32NewValue" dx1="926.67"/>
 			<Connection Source="IN_NumberVariable.IN" Destination="AD_TO_AUDI.AD_IN" dx1="220"/>
 			<Connection Source="AD_TO_AUDI.AUDI_OUT" Destination="NVS_UDINT.AUDI_IN" dx1="593.33"/>
 			<Connection Source="AUDI_SPLIT_2.OUT2" Destination="Q_NumericValue_Ziel.u32NewValue" dx1="760"/>
 			<Connection Source="NVS_UDINT.AUDI_OUT" Destination="AUDI_SPLIT_2.IN" dx1="493.33"/>
 			<Connection Source="CV" Destination="F_GE.IN1" dx1="2253.33"/>
 			<Connection Source="AUDI_SPLIT_2.OUT1" Destination="F_GE.IN2" dx1="80" dx2="80" dy="-826.67"/>
+			<Connection Source="initval_AUDI_OutputString_ZielErreicht.OUT" Destination="AX_SEL.IN1" dx1="373.33"/>
+			<Connection Source="initval_AUDI_ID_NULL.OUT" Destination="AX_SEL.IN0" dx1="526.67"/>
 		</AdapterConnections>
 	</SubAppNetwork>
 </SubAppType>
